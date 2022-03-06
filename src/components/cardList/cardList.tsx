@@ -1,7 +1,8 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import CardItem from "../cardItem/cardItem";
 import styled from "styled-components";
 import {useGetProductsQuery} from "../../store/product/product";
+import {Product} from "../../types";
 
 const List = styled.ul`
   max-width: 978px;
@@ -11,18 +12,10 @@ const List = styled.ul`
   row-gap: 64px;
   margin-top: 24px;
 `
-const CardList = () => {
-    // @ts-ignore
-    const {data,isLoading} = useGetProductsQuery()
-    useEffect(()=>{
-        if(!isLoading){
-            console.log(data)
-        }
-    },[isLoading])
-
+const CardList = ({products}: {products?: Product[]}) => {
     return (
         <List>
-            {data?.map(product => (
+            {products && products.map(product => (
                 <li key={product.id}><CardItem product={product}/></li>
             ))}
         </List>

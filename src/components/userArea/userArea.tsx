@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import User from '../../assets/img/user.svg';
 import Favorite from '../../assets/img/favorites.svg';
-import Basket from '../../assets/img/basket.svg';
+import Cart from '../../assets/img/cart.svg';
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -18,7 +18,7 @@ const A = styled.a`
 const UserArea = () => {
     return (
         <Container>
-            <Link href={'/basket'} passHref><A><Basket/></A></Link>
+            <Link href={'/cart'} passHref><A><Cart/></A></Link>
             <Link href={'/favorites'} passHref><A><Favorite/></A></Link>
             <Link href={'/user'} passHref><A><User/></A></Link>
         </Container>

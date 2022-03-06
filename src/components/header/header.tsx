@@ -9,8 +9,10 @@ const Header = styled.header`
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   padding-top: 26px;
   padding-bottom: 18px;
+
 `;
 const Container = styled.div`
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;

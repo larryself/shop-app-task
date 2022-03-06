@@ -1,15 +1,16 @@
-export type Raiting = {
-    count: number,
+export interface Rating {
+    count: number
     rate: number
-}
-export type Product  = {
-    id: number;
-    category: string;
-    description: string;
-    img: string;
-    title: string;
-    rating : Raiting
-}
-export type menuItems = {
-    menuItems:[Product]
-}
+};
+export interface Product  {
+    id: number
+    category: string
+    description: string
+    image: string
+    title: string
+    price: number
+    rating : Rating
+};
+export interface Categories {
+    key: string
+};
