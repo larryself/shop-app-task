@@ -1,7 +1,12 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {Range,getTrackBackground} from 'react-range';
-
-const RangeSlider = ({min, max,value}: any) => {
+interface RangeSliderProps {
+    min: number,
+    max: number,
+    value: number[],
+    setValue: (values:number[]) => void,
+}
+const RangeSlider: FC<RangeSliderProps> = ({min, max, value, setValue}) => {
     const [values, setValues] = React.useState(value);
     return (
         <>
@@ -17,13 +22,13 @@ const RangeSlider = ({min, max,value}: any) => {
                 min={min}
                 max={max}
                 values={values}
-                onFinalChange={(values)=>console.log('finalValues',values)}
+                onFinalChange={(values)=>{setValue(values); console.log(values)}}
                 onChange={(values) => setValues(values)}
                 renderTrack={({props, children}) =>(
                     <div
                         style={{
                             ...props.style,
-                            height: '16px',
+                            height: '100%',
                             display: 'flex',
                             width: '100%'
                         }}
@@ -67,8 +72,9 @@ const RangeSlider = ({min, max,value}: any) => {
                                 top: '12px',
                                 color: '#000',
                                 fontWeight: 'bold',
-                                fontSize: '14px',
-                                fontFamily: 'Arial,Helvetica Neue,Helvetica,sans-serif',
+                                fontSize: '12px',
+                                lineHeight: '22px',
+                                fontFamily: 'inherit',
                                 padding: '4px',
                                 borderRadius: '4px',
                                 backgroundColor: 'transparent'

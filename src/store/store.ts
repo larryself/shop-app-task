@@ -11,9 +11,11 @@ const rootReducer = combineReducers({
     favorites: favoritesReducer,
     [productsApi.reducerPath]: productsApi.reducer,
 });
+
 export const store = configureStore({
     reducer: rootReducer,
     middleware: getDefaultMiddleware => getDefaultMiddleware().concat(productsApi.middleware),
 });
+
 setupListeners(store.dispatch);
 export type TypeRootState = ReturnType<typeof store.getState>

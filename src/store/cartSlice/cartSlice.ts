@@ -15,6 +15,7 @@ const initialState: CartState = {
     count: 1,
     cart: [],
 };
+
 export const cartSlice = createSlice({
     name: 'cart',
     initialState,
@@ -27,10 +28,9 @@ export const cartSlice = createSlice({
             }
         },
         addItem: (state, action) => {
-            state.cart.push({product: action.payload, count: state.count})
-
+            console.log(state)
         },
-
+        removeItem: (state, action: PayloadAction<{ id: number }>) => state.cart.filter(element => element.product?.id !== action.payload.id),
     },
 });
 export const cartReducer = cartSlice.reducer;

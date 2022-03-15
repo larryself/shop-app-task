@@ -1,44 +1,11 @@
-import React from 'react';
+import React, {FC} from 'react';
 import Link from 'next/link';
-import styled from "styled-components";
 import Facebook from '../../assets/img/facebook.svg';
 import Instagram from '../../assets/img/instagram.svg';
 import Twitter from '../../assets/img/twitter.svg';
+import {Wrap, SocialMedia, A, Phone, Copyright, Container} from './style';
 
-const Wrap = styled.footer`
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  color: rgba(0, 0, 0, 0.65);
-  border-top: 1px solid rgba(0, 0, 0, 0.15);
-  padding-top: 32px;
-  padding-bottom: 67px;
-`;
-const A = styled.a`
-  display: flex;
-  cursor: pointer;
-  padding: 8px;
-  background: rgba(0, 0, 0, 0.04);
-  border-radius: 8px
-`;
-const SocialMedia = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 12px;
-`
-const Phone = styled.p`
-  font-size: 16px;
-  line-height: 24px;`
-const Copyright = styled.p`
-  font-size: 14px;
-  line-height: 18px;
-  margin-top: 8px;
-`
-const Container = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;`;
-const Footer = () => {
+const Footer: FC = () => {
     return (
         <Wrap>
             <SocialMedia>

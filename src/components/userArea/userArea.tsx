@@ -1,21 +1,11 @@
-import React from 'react';
+import React, {FC} from 'react';
 import Link from 'next/link';
 import User from '../../assets/img/user.svg';
 import Favorite from '../../assets/img/favorites.svg';
 import Cart from '../../assets/img/cart.svg';
-import styled from "styled-components";
+import {Container, A} from "./style.";
 
-const Container = styled.div`
-  display: flex;
-  column-gap: 32px;
-`;
-const A = styled.a`
-  display: flex;
-  cursor: pointer;
-  &:hover {
-    opacity: 0.2;
-  }`
-const UserArea = () => {
+const UserArea: FC = () => {
     return (
         <Container>
             <Link href={'/cart'} passHref><A><Cart/></A></Link>
