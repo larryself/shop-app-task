@@ -1,21 +1,22 @@
-import React, {FC} from 'react';
+import React, {FC, useState} from 'react';
 import {Product} from "../../types";
 import CountSelector from "../countSelector/countSelector";
 import {Container, ImgWrapper} from './style';
 
-const CartItem: FC<{product: Product, value: number}> = ({product,value}) => {
+const CartItem: FC<Product> = ({image,title,piece,price}) => {
+    const [count, setCount] = useState(piece);
     return (
         <Container>
             <div>
                 <ImgWrapper>
-                    <img src={product.image} width={72} height={64} alt={product.title}/>
+                    <img src={image} width={72} height={64} alt={title}/>
                 </ImgWrapper>
             </div>
-            <p>{product.title}</p>
+            <p>{title}</p>
             <div>
-                <CountSelector id={product.id} value={value}/>
+                <CountSelector count={count} setCount={setCount}/>
             </div>
-            <p>{product.price}</p>
+            <p>{price}</p>
         </Container>
     );
 };

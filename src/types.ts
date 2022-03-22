@@ -10,6 +10,7 @@ export interface Product  {
     title: string
     price: number
     rating : Rating
+    piece: number
 };
 export interface Categories {
     key: string

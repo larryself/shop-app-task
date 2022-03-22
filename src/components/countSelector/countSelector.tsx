@@ -1,12 +1,9 @@
-import React, {useState, FC, useEffect} from 'react';
+import React, {FC} from 'react';
 import Minus from "../../assets/img/minus.svg";
 import Plus from "../../assets/img/plus.svg";
-import {useAction} from "../../hooks/useAction";
 import {Container, Input, Button} from './style';
 
-const CountSelector: FC<{value?: number, id: number}> = ({value, id}) => {
-    const [count, setCount] = useState(value || 1);
-    const {handleCount}= useAction();
+const CountSelector: FC<{count: number, setCount: (count:any)=>void}> = ({count, setCount}) => {
     const increment = () => {
         setCount(count + 1);
     };
@@ -17,9 +14,6 @@ const CountSelector: FC<{value?: number, id: number}> = ({value, id}) => {
         const {target: {value}} = event;
         setCount(+value);
     };
-    useEffect(()=>{
-        handleCount({count,id})
-    },[count])
     return (
         <>
             <Container>

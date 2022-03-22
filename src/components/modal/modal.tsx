@@ -1,4 +1,4 @@
-import React, {useEffect, FC} from 'react';
+import React, {useEffect, FC, useState} from 'react';
 import {useAction} from "../../hooks/useAction";
 import CountSelector from "../countSelector/countSelector";
 import Favorite from "../../assets/img/favorites.svg";
@@ -8,6 +8,7 @@ import {ModalBox, ContentInner, Content, Button, Img, Container, Header, TitleIn
 const Modal: FC<{product:Product}> = ({product}) => {
     const {closeCart, addItem} = useAction();
     const {handleFavorite}=useAction();
+    const [count, setCount] = useState(1);
     const closeModal = () => {
         closeCart();
         const body = document.querySelector('body')
@@ -55,8 +56,8 @@ const Modal: FC<{product:Product}> = ({product}) => {
                 <Content>
                     <h3>Description</h3>
                     <p>{product.description}</p>
-                    <CountSelector id={product.id} />
-                    <Button type="button" onClick={() => {addItem(product), closeModal()}}>Add to cart</Button>
+                    <CountSelector count={count} setCount={setCount} />
+                    <Button type="button" onClick={() => {addItem({...product, piece: count}), closeModal()}}>Add to cart</Button>
                 </Content>
             </ContentInner>
         </ModalBox>

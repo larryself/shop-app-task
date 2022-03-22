@@ -19,7 +19,7 @@ const HomePage : FC = () => {
             <Container>
                 <section style={{flex: '1 0 auto', height: '100%'}}>
                     <h2>{query.name ? query.name : 'All products'}</h2>
-                    {!isFetching && <CardList products={data}/>}
+                    {!isFetching && <CardList products={data} category={query.name}/>}
                 </section>
                 <div style={{ flex: '0 0 auto'}}>
                 <Footer/>

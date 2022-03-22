@@ -1,36 +1,16 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {Product} from "../../types";
 
-interface CartItem {
-    product?: Product,
-    count: number,
-}
-
-export interface CartState {
-    count: number,
-    cart: CartItem[]
-}
-
-const initialState: CartState = {
-    count: 1,
-    cart: [],
-};
+const initialState: Product[] = []
 
 export const cartSlice = createSlice({
     name: 'cart',
     initialState,
     reducers: {
-        handleCount: (state,action) => {
-            if(action.payload){
-                console.log(action.payload)
-            } else {
-                state.count = action.payload
-            }
-        },
         addItem: (state, action) => {
-            console.log(state)
+            state.push(action.payload)
         },
-        removeItem: (state, action: PayloadAction<{ id: number }>) => state.cart.filter(element => element.product?.id !== action.payload.id),
+        removeItem: (state, action) => state.filter((cart) => cart.id !== action.payload.id),
     },
 });
 export const cartReducer = cartSlice.reducer;

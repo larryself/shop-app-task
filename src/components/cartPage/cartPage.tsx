@@ -2,30 +2,20 @@ import React, {FC} from 'react';
 import {useAppSelector} from "../../hooks/useAppSelector";
 import {useGetProductsQuery} from "../../store/product/product";
 import {Product} from "../../types";
-import PageHeader from "../header/header";
+
 import {Wrapper} from "../wrapper/wrapper";
 import CartItem from "../cartItem/cartItem";
 import Footer from "../footer/footer";
 import {ContentInner, Title, CartList, CartContent, Price, Total, List, Row, RowTitle,SumRow, Titles, Line, Button} from './style';
 
 const CartPage: FC = () => {
-    const {cart} = useAppSelector(state => state.cart)
+    const cart = useAppSelector(state => state.cart)
     const {data} = useGetProductsQuery();
-    const formatedCartItem = (cart: any[])=> {
-        const id = cart.map(item=> item.product.id);
-        const unique = Array.from(new Set(id));
-        return unique.map(element=>{
-            if(unique.includes(element.product.id)){
-
-            }
-        })
-
-    }
-    console.log(formatedCartItem(cart))
-    const sum = (products: {product:Product,count:number}[]) => {
-        const price = products.map(product => product.product.price * product.count);
+    const sum = (products:Product[]) => {
+        const price = products.map(product => product.price * product.piece);
         return price.reduce((acc, el) => acc + el, 0)
     }
+    console.log(cart)
     return (
         <>
             <main>
@@ -34,8 +24,8 @@ const CartPage: FC = () => {
                         <CartContent>
                             <Title>Your shopping cart</Title>
                             <CartList>
-                                {cart.map(product => (
-                                    <li key={product.product?.id}>{<CartItem product={product.product} value={product.count}/>}
+                                {cart.map((item) => (
+                                    <li key={item.id}>{<CartItem {...item} />}
                                     </li>
                                 ))}
                             </CartList>

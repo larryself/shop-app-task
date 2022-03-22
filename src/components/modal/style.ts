@@ -44,6 +44,7 @@ export const Title = styled.h3`
  display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
+ overflow: hidden;
  font-weight: ${FONT_WEIGHT.xxl};
  font-size: ${FONT_SIZES.xxl};
  line-height: 100%;

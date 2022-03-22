@@ -1,12 +1,19 @@
-import React, {FC} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import CardItem from "../cardItem/cardItem";
 import {Product} from "../../types";
 import {List} from "./style";
 
-const CardList: FC<{products?: Product[]}> = ({products}) => {
+const CardList: FC<{products: Product[],category?: string}> = ({products=[], category= ''}) => {
+    const [carts, setCarts] = useState<Product[]>(products);
+    useEffect(()=>{
+        if(category){
+            const sortedProducts = products.filter((product)=> product.category === category)
+            setCarts(sortedProducts);
+        }
+    },[category])
     return (
         <List>
-            {products && products.map(product => (
+            {carts.map(product => (
                 <li key={product.id}><CardItem product={product}/></li>
             ))}
         </List>
