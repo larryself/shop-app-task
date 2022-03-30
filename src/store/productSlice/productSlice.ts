@@ -1,24 +1,41 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {Product} from "../../types";
+import {productsApi} from "../product/product";
 
-interface OpenProduceState {
-    product: Product[],
+type ProduceState = {
+    open: Product | null,
+    rating : number[],
+    price: number[],
 }
 
-const initialState: OpenProduceState = {
-    product: [],
-};
-export const openProductSlice = createSlice({
-    name: 'openProduct',
-    initialState,
+
+export const productSlice = createSlice({
+    name: 'product',
+    initialState: {open: null , rating: [], price: []} as ProduceState,
     reducers: {
         openCart: (state, action: PayloadAction<Product>) => {
-            state.product.push({...action.payload});
-        },
+            state.open = action.payload;
+            },
         closeCart: (state) => {
-            state.product.pop()
-        },
+            state.open = null;
+            },
     },
+    extraReducers: (builder) => {
+        builder.addMatcher(
+            productsApi.endpoints.getProducts.matchFulfilled,
+            (state, {payload}) => {
+                debugger
+                const price = payload.map(el=> el.price);
+                const rating = payload.map(el=>el.rating.rate);
+                const priceMax = Math.max(...price);
+                const priceMin = Math.min(...price);
+                const ratingMax = Math.max(...rating);
+                const ratingMin = Math.min(...rating);
+                state.price = [priceMin,priceMax];
+                state.rating = [ratingMin,ratingMax]
+            }
+        )
+    }
 });
-export const openProductReducer = openProductSlice.reducer;
-export const openProductActions = openProductSlice.actions;
+export const productReducer = productSlice.reducer;
+export const productActions = productSlice.actions;

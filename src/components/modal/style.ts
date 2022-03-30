@@ -52,6 +52,9 @@ export const Title = styled.h3`
 
 export const FavoriteBtn = styled.button`
   display: flex;
+  &:hover {
+    opacity: .5;
+  }
 `;
 
 export const Content = styled.div`

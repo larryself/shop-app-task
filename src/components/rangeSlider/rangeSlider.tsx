@@ -4,9 +4,8 @@ interface RangeSliderProps {
     min: number,
     max: number,
     value: number[],
-    setValue: (values:number[]) => void,
 }
-const RangeSlider: FC<RangeSliderProps> = ({min, max, value, setValue}) => {
+const RangeSlider: FC<RangeSliderProps> = ({min, max, value}) => {
     const [values, setValues] = React.useState(value);
     return (
         <>
@@ -22,7 +21,7 @@ const RangeSlider: FC<RangeSliderProps> = ({min, max, value, setValue}) => {
                 min={min}
                 max={max}
                 values={values}
-                onFinalChange={(values)=>{setValue(values); console.log(values)}}
+                onFinalChange={(values)=>{ console.log(values)}}
                 onChange={(values) => setValues(values)}
                 renderTrack={({props, children}) =>(
                     <div

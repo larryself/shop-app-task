@@ -1,13 +1,13 @@
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
 import {productsApi} from "./product/product";
 import {cartReducer} from "./cartSlice/cartSlice";
-import {openProductReducer} from "./productSlice/productSlice";
+import {productReducer} from "./productSlice/productSlice";
 import {setupListeners} from "@reduxjs/toolkit/query";
 import {favoritesReducer} from "./favoritesSlice/favoritesSlice";
 
 const rootReducer = combineReducers({
     cart: cartReducer,
-    openProduct: openProductReducer,
+    product: productReducer,
     favorites: favoritesReducer,
     [productsApi.reducerPath]: productsApi.reducer,
 });

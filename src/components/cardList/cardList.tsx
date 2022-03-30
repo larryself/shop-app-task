@@ -3,7 +3,11 @@ import CardItem from "../cardItem/cardItem";
 import {Product} from "../../types";
 import {List} from "./style";
 
-const CardList: FC<{products: Product[],category?: string}> = ({products=[], category= ''}) => {
+interface CardListProps {
+    products: Product[],
+    category: string | string[] | undefined,
+}
+const CardList: FC<CardListProps> = ({products=[], category= ''}) => {
     const [carts, setCarts] = useState<Product[]>(products);
     useEffect(()=>{
         if(category){

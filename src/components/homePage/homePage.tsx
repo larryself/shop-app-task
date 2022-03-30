@@ -9,7 +9,7 @@ import TypeBar from "../typeBar/typeBar";
 import {Container} from "./style";
 
 const HomePage : FC = () => {
-    const {product} = useAppSelector(state => state.openProduct);
+    const {open} = useAppSelector(state => state.product);
     const router = useRouter();
     const {data,isFetching} = useGetProductsQuery();
     const {query} = router;
@@ -19,13 +19,13 @@ const HomePage : FC = () => {
             <Container>
                 <section style={{flex: '1 0 auto', height: '100%'}}>
                     <h2>{query.name ? query.name : 'All products'}</h2>
-                    {!isFetching && <CardList products={data} category={query.name}/>}
+                    { data && !isFetching && <CardList products={data} category={query.name}/>}
                 </section>
                 <div style={{ flex: '0 0 auto'}}>
                 <Footer/>
                 </div>
             </Container>
-            {product.length > 0 && <Modal product={product[0]}/>}
+            {open && <Modal product={open}/>}
         </>
     );
 };

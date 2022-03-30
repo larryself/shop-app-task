@@ -2,6 +2,7 @@ import {createSlice} from "@reduxjs/toolkit";
 import {Product} from "../../types";
 
 const initialState:Product[]=[]
+
 export const favoritesSlice = createSlice({
     name: 'favorites',
     initialState,

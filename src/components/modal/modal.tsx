@@ -1,9 +1,9 @@
 import React, {useEffect, FC, useState} from 'react';
 import {useAction} from "../../hooks/useAction";
 import CountSelector from "../countSelector/countSelector";
-import Favorite from "../../assets/img/favorites.svg";
 import {Product} from "../../types";
 import {ModalBox, ContentInner, Content, Button, Img, Container, Header, TitleInner, Title, FavoriteBtn, Price} from "./style";
+import Favorites from "../icon/favorites/favorites";
 
 const Modal: FC<{product:Product}> = ({product}) => {
     const {closeCart, addItem} = useAction();
@@ -45,7 +45,7 @@ const Modal: FC<{product:Product}> = ({product}) => {
                     <Header>
                         <TitleInner>
                             <Title>{product.title}</Title>
-                            <FavoriteBtn onClick={()=>handleFavorite(product)}><Favorite/></FavoriteBtn>
+                            <FavoriteBtn onClick={()=>handleFavorite(product)}><Favorites/></FavoriteBtn>
                         </TitleInner>
                         <Price>{product.price}</Price>
                     </Header>
