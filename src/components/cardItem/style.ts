@@ -1,10 +1,15 @@
-import styled from "styled-components";
-import {FONT_SIZES, FONT_WEIGHT} from "../../contants/font";
+import styled from 'styled-components';
+import { FONT_SIZES, FONT_WEIGHT } from '../../contants/font';
 
-export const Container = styled.div`
+export const Inner = styled.div`
   display: flex;
   flex-direction: column;
+  height: 100%;
 `;
+
+export const Container = styled.div`
+  flex-grow: 1;
+`
 
 export const ImgContainer = styled.div`
   display: flex;
@@ -24,7 +29,7 @@ export const Name = styled.p`
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
+  -webkit-line-clamp: 3;
 `;
 
 export const Price = styled.p`

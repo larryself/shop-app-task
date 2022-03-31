@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import {FONT_SIZES} from "../../contants/font";
+import styled from 'styled-components';
+import { FONT_SIZES } from '../../contants/font';
 
 export const Header = styled.header`
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
@@ -12,7 +12,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  @media (max-width: 750px){
+  @media (max-width: 750px) {
     flex-direction: column;
     gap: 10px;
   }

@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import {COLOR} from "../../contants/color";
-import {FONT_SIZES} from "../../contants/font";
+import styled from 'styled-components';
+import { COLOR } from '../../contants/color';
+import { FONT_SIZES } from '../../contants/font';
 
 export const Nav = styled.nav`
 `;
@@ -8,7 +8,7 @@ export const Nav = styled.nav`
 export const MenuList = styled.ul`
   display: flex;
   column-gap: 32px;
-  @media (max-width: 640px){
+  @media (max-width: 640px) {
     flex-direction: column;
     align-items: center;
   }
@@ -22,7 +22,8 @@ export const ItemLink = styled.a`
   cursor: pointer;
   position: relative;
   font-size: ${FONT_SIZES.sm};
-  &::after{
+
+  &::after {
     position: absolute;
     content: '';
     display: none;
@@ -31,7 +32,8 @@ export const ItemLink = styled.a`
     background-color: ${COLOR.black};
     bottom: -4px;
   }
-  &:hover::after{
+
+  &:hover::after {
     display: block;
   }
 `;

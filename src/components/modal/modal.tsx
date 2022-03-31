@@ -2,7 +2,7 @@ import React, {useEffect, FC, useState} from 'react';
 import {useAction} from "../../hooks/useAction";
 import CountSelector from "../countSelector/countSelector";
 import {Product} from "../../types";
-import {ModalBox, ContentInner, Content, Button, Img, Container, Header, TitleInner, Title, FavoriteBtn, Price} from "./style";
+import {ModalBox, Inner, ContentInner, Content, Button, Img, Container, Header, TitleInner, Title, FavoriteBtn, Price, ImgInner, BtnInner} from "./style";
 import Favorites from "../icon/favorites/favorites";
 
 const Modal: FC<{product:Product}> = ({product}) => {
@@ -40,7 +40,7 @@ const Modal: FC<{product:Product}> = ({product}) => {
 
     return (
         <ModalBox className={'modal'}>
-            <ContentInner>
+            <Inner>
                 <Container>
                     <Header>
                         <TitleInner>
@@ -49,17 +49,21 @@ const Modal: FC<{product:Product}> = ({product}) => {
                         </TitleInner>
                         <Price>{product.price}</Price>
                     </Header>
-                <div>
+                <ImgInner>
                     <Img src={product.image} alt={product.title}/>
-                </div>
+                </ImgInner>
                 </Container>
-                <Content>
-                    <h3>Description</h3>
-                    <p>{product.description}</p>
-                    <CountSelector count={count} setCount={setCount} />
-                    <Button type="button" onClick={() => {addItem({...product, piece: count}), closeModal()}}>Add to cart</Button>
-                </Content>
-            </ContentInner>
+                <ContentInner>
+                    <Content>
+                        <h3>Description</h3>
+                        <p>{product.description}</p>
+                    </Content>
+                    <BtnInner>
+                        <CountSelector count={count} setCount={setCount} />
+                        <Button type="button" onClick={() => {addItem({...product, piece: count}), closeModal()}}>Add to cart</Button>
+                    </BtnInner>
+                </ContentInner>
+            </Inner>
         </ModalBox>
     );
 };

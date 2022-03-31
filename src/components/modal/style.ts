@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import {COLOR} from "../../contants/color";
-import {FONT_SIZES, FONT_WEIGHT} from "../../contants/font";
+import styled from 'styled-components';
+import { COLOR } from '../../contants/color';
+import { FONT_SIZES, FONT_WEIGHT } from '../../contants/font';
 
 export const ModalBox = styled.div`
   position: fixed;
@@ -14,7 +14,7 @@ export const ModalBox = styled.div`
   justify-content: center;
 `;
 
-export const ContentInner = styled.div`
+export const Inner = styled.div`
   display: flex;
   background: ${COLOR.white};
 `;
@@ -23,9 +23,13 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   background: rgba(0, 0, 0, 0.04);
-  padding-top: 96px;
-  padding-left: 64px;
-  padding-right: 64px;
+  padding: 96px 64px;
+  @media (max-width: 1024px) {
+    padding: 56px 24px;
+  }
+  @media (max-width: 724px) {
+    padding: 26px 10px;
+  }
 `;
 
 export const Header = styled.div`
@@ -41,26 +45,34 @@ export const TitleInner = styled.div`
 `;
 
 export const Title = styled.h3`
- display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
- overflow: hidden;
- font-weight: ${FONT_WEIGHT.xxl};
- font-size: ${FONT_SIZES.xxl};
- line-height: 100%;
+  width: 70%;
+  font-weight: ${FONT_WEIGHT.xxl};
+  font-size: ${FONT_SIZES.xxl};
+  line-height: 100%;
 `;
 
 export const FavoriteBtn = styled.button`
   display: flex;
+
   &:hover {
     opacity: .5;
   }
 `;
 
-export const Content = styled.div`
+export const ContentInner = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
   max-width: 500px;
-  padding: 32px 64px;
+  padding: 32px 64px 96px;
+  gap: 18px;
+  @media (max-width: 1024px) {
+    padding: 28px 24px 56px;
+  }
+  @media (max-width: 724px) {
+    padding: 24px 10px ;
+  }
 `;
 
 export const Button = styled.button`
@@ -73,11 +85,17 @@ export const Button = styled.button`
   }
 `;
 
+export const ImgInner = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 export const Img = styled.img`
   max-width: 584px;
   max-height: 456px;
   width: 100%;
   height: 100%;
+  object-fit: contain;
 `;
 
 export const Price = styled.p`
@@ -86,3 +104,16 @@ export const Price = styled.p`
   line-height: 1.334;
   color: rgba(0, 0, 0, 0.65)
 `
+
+export const BtnInner = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+`;
+
+export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+`;

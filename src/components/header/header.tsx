@@ -1,28 +1,28 @@
-import {FC} from "react";
-import Menu from "../menu/menu";
-import {Wrapper} from "../wrapper/wrapper";
+import { FC } from 'react';
+import Menu from '../menu/menu';
+import { Wrapper } from '../wrapper/wrapper';
 import Link from 'next/link'
 import Logo from '../../assets/img/logo.svg';
-import UserArea from "../userArea/userArea";
-import {Container, A, Header, Title} from './style';
+import UserArea from '../userArea/userArea';
+import { Container, A, Header, Title } from './style';
 
 const PageHeader: FC = () => {
-    return (
-        <Header>
-            <Wrapper>
-                <Container>
-                    <Link href={'/'} passHref>
-                        <A>
-                            <Logo/>
-                            <Title>SC.</Title>
-                        </A>
-                    </Link>
-                    <Menu/>
-                    <UserArea/>
-                </Container>
-            </Wrapper>
-        </Header>
-    );
+  return (
+    <Header>
+      <Wrapper>
+        <Container>
+          <Link href={'/'} passHref>
+            <A>
+              <Logo/>
+              <Title>SC.</Title>
+            </A>
+          </Link>
+          <Menu/>
+          <UserArea/>
+        </Container>
+      </Wrapper>
+    </Header>
+  );
 };
 
 export default PageHeader;

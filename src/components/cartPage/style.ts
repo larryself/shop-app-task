@@ -1,12 +1,23 @@
-import styled from "styled-components";
-import {FONT_SIZES, FONT_WEIGHT} from "../../contants/font";
-import {COLOR} from "../../contants/color";
+import styled from 'styled-components';
+import { FONT_SIZES, FONT_WEIGHT } from '../../contants/font';
+import { COLOR } from '../../contants/color';
+
+export const Main = styled.div`
+  flex: 1 0 auto;
+  padding: 32px 0;
+`;
+export const Footer = styled.footer`
+  flex: 0 0 auto;
+`
 
 export const ContentInner = styled.div`
   display: flex;
-  width: 100%;`
+  width: 100%;
+  gap: 64px;
+`;
 
 export const Total = styled.div`
+  width: 368px;
 `;
 
 export const Title = styled.h2`
@@ -20,6 +31,7 @@ export const CartContent = styled.div`
 `;
 
 export const CartList = styled.ul`
+  margin-top: 24px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -30,7 +42,7 @@ export const Button = styled.button`
   padding: 10px 28px;
   color: ${COLOR.white};
   margin-left: 7px;
-  margin-top:64px;
+  margin-top: 64px;
 `;
 
 export const Titles = styled.h4`
@@ -53,7 +65,7 @@ export const Row = styled.li`
   justify-content: space-between;
 `;
 
-export const RowTitle= styled.p`
+export const RowTitle = styled.p`
   font-size: ${FONT_SIZES.md};
   line-height: 1.5;
   color: rgba(0, 0, 0, 0.65);

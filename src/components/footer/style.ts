@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import {FONT_SIZES} from "../../contants/font";
+import styled from 'styled-components';
+import { FONT_SIZES } from '../../contants/font';
 
 export const Wrap = styled.footer`
   display: flex;

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const AnimationBox = styled.div`
   position: absolute;
@@ -7,6 +7,7 @@ export const AnimationBox = styled.div`
   right: 0;
   bottom: 0;
   background: rgba(196, 196, 196, 0.3);`
+
 export const Animation = styled.span`
   position: absolute;
   top: 50%;
@@ -21,7 +22,7 @@ export const Animation = styled.span`
     content: ' ';
     display: block;
     background: none;
-    animation: curcle 1.5s ease-in-out infinite;
+    animation: circle 1.5s ease-in-out infinite;
     border-radius: 50%;
     width: 100%;
     height: 100%;
@@ -31,7 +32,7 @@ export const Animation = styled.span`
     border-color: currentColor transparent;
   }
 
-  @keyframes curcle {
+  @keyframes circle {
     0% {
       transform: rotate(0);
     }
