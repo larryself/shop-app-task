@@ -22,6 +22,6 @@ export const Item = styled.div`
 
   &:not(:last-child) {
     padding-bottom: 70px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid var(--middle-grey);
   }
 `;

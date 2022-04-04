@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { FONT_SIZES } from '../../contants/font';
 
 export const Header = styled.header`
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid var(--middle-grey);
   padding-top: 26px;
   padding-bottom: 18px;
 `;
@@ -26,5 +26,5 @@ export const A = styled.a`
 
 export const Title = styled.h1`
   font-size: ${FONT_SIZES.xxl};
-  line-height: 100%;
+  line-height: 1;
 `;

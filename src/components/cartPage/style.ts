@@ -1,14 +1,15 @@
 import styled from 'styled-components';
 import { FONT_SIZES, FONT_WEIGHT } from '../../contants/font';
-import { COLOR } from '../../contants/color';
 
+export const Inner = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+`
 export const Main = styled.div`
   flex: 1 0 auto;
   padding: 32px 0;
 `;
-export const Footer = styled.footer`
-  flex: 0 0 auto;
-`
 
 export const ContentInner = styled.div`
   display: flex;
@@ -38,9 +39,9 @@ export const CartList = styled.ul`
 `;
 
 export const Button = styled.button`
-  background-color: ${COLOR.red};
+  background-color: var(--red);
   padding: 10px 28px;
-  color: ${COLOR.white};
+  color: var(--white);
   margin-left: 7px;
   margin-top: 64px;
 `;
@@ -50,7 +51,7 @@ export const Titles = styled.h4`
   font-weight: ${FONT_WEIGHT.md};
   font-size: ${FONT_SIZES.lg};
   line-height: 32px;
-  color: rgba(0, 0, 0, 0.75);
+  color: var(--dark-grey);
 `;
 
 export const List = styled.ul`
@@ -68,7 +69,7 @@ export const Row = styled.li`
 export const RowTitle = styled.p`
   font-size: ${FONT_SIZES.md};
   line-height: 1.5;
-  color: rgba(0, 0, 0, 0.65);
+  color: var(--grey);
 `;
 
 export const SumRow = styled.div`
@@ -83,7 +84,7 @@ export const Price = styled.p`
 `;
 
 export const Line = styled.div`
-  border: 1px solid rgba(${COLOR.black} 0.15);
+  border: 1px solid var(--middle-grey);
   margin-top: 22px;
   margin-bottom: 24px;
 `;

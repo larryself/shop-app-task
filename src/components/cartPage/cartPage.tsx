@@ -1,12 +1,11 @@
 import React, { FC } from 'react';
 import { useAppSelector } from '../../hooks/useAppSelector';
-import { useGetProductsQuery } from '../../store/product/product';
 import { Product } from '../../types';
-
 import { Wrapper } from '../wrapper/wrapper';
 import CartItem from '../cartItem/cartItem';
-import Footer from '../footer/footer';
+import { Footer } from '../footer/footer';
 import {
+  Inner,
   Main,
   ContentInner,
   Title,
@@ -23,18 +22,15 @@ import {
   Button
 } from './style';
 
-
 const CartPage: FC = () => {
   const cart = useAppSelector(state => state.cart)
-  const {data} = useGetProductsQuery();
   const sum = (products: Product[]) => {
     const price = products.map(product => product.price * product.piece);
-    return price.reduce((acc, el) => acc + el, 0)
+    return price.reduce((acc, el) => acc + el, 0).toFixed(2)
   }
-
-  console.log(cart)
   return (
     <Wrapper>
+      <Inner>
       <Main>
         <ContentInner>
           <CartContent>
@@ -57,10 +53,9 @@ const CartPage: FC = () => {
             <Button type={'button'}>Proceed to checkout</Button>
           </Total>
         </ContentInner>
-
       </Main>
-      <footer>
-      </footer>
+      <Footer/>
+      </Inner>
     </Wrapper>
   );
 };

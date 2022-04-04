@@ -1,19 +1,19 @@
-import React from 'react';
-import PageHeader from "../header/header";
-import {Wrapper} from "../wrapper/wrapper";
-import {Main} from "./style";
+import React, { FC } from 'react';
+import { useGetProductsQuery } from '../../store/product/product';
+import { Loader } from '../loader/loader';
 
-const Layout = ({children}: any) => {
-    return (
-        <>
+interface LayoutProps {
+  children: React.ReactNode
+}
 
-            <Main>
-                <Wrapper>
-                    {children}
-                </Wrapper>
-            </Main>
-        </>
-    );
+const Layout: FC<LayoutProps> = ({children}) => {
+  const {isFetching} = useGetProductsQuery();
+  return (
+    <>
+      {children}
+      {isFetching && <Loader/>}
+    </>
+  );
 };
 
 export default Layout;

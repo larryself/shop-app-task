@@ -7,7 +7,7 @@ export const Input = styled.input`
   height: 48px;
   border-style: solid;
   border-width: 1px;
-  border-color: rgba(0, 0, 0, 0.15);
+  border-color: var(--middle-grey);
   box-sizing: border-box;
   border-radius: 8px;
   font-size: ${FONT_SIZES.md};

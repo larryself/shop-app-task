@@ -3,7 +3,10 @@ import { Product } from '../../types';
 import { useAction } from '../../hooks/useAction';
 import { Inner, Container, ImgContainer, Img, Name, Price } from './style';
 
-const CardItem: FC<{ product: Product }> = ({product}) => {
+interface ProductItemProps {
+  product: Product,
+}
+export const ProductItem: FC<ProductItemProps> = ({product}) => {
   const convertPrice = (value: number) => {
     return value.toFixed(3);
   }
@@ -23,5 +26,3 @@ const CardItem: FC<{ product: Product }> = ({product}) => {
     </Inner>
   );
 };
-
-export default CardItem;

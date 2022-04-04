@@ -1,11 +1,11 @@
-import React, { FC } from 'react';
+import React from 'react';
 import Link from 'next/link';
-import Facebook from '../../assets/img/facebook.svg';
-import Instagram from '../../assets/img/instagram.svg';
-import Twitter from '../../assets/img/twitter.svg';
-import { Wrap, SocialMedia, A, Phone, Copyright, Container } from './style';
+import { Facebook } from '../icon/facebook/facebook';
+import { Instagram } from '../icon/instagram/instagram';
+import { Twitter } from '../icon/twitter/twitter';
+import { Wrap, SocialMedia, A, Phone, Copyright } from './style';
 
-const Footer: FC = () => {
+export const Footer = () => {
   return (
     <Wrap>
       <SocialMedia>
@@ -14,12 +14,8 @@ const Footer: FC = () => {
         <Link href={'https://instagram.com'} passHref={true}><A><Instagram/></A></Link>
         <Link href={'https://facebook.com'} passHref={true}><A><Facebook/></A></Link>
       </SocialMedia>
-      <Container>
-        <Phone>Support line: <a href={'tel:+250788467808'}>+250 788 467 808</a></Phone>
-        <Copyright>Copyright 2021 © Sneaker City ltd</Copyright>
-      </Container>
+      <Phone>Support line: <Link href={'tel:+250788467808'}>+250 788 467 808</Link></Phone>
+      <Copyright>Copyright 2021 © Sneaker City ltd</Copyright>
     </Wrap>
   );
 };
-
-export default Footer;

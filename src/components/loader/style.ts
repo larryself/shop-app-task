@@ -6,37 +6,23 @@ export const AnimationBox = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(196, 196, 196, 0.3);`
+  background: var(--white-grey);`
 
 export const Animation = styled.span`
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 1;
   width: 63px;
   height: 63px;
-  transition: all 0.3s ease-in-out;
+  border-radius: 50%;
+  background: radial-gradient(farthest-side, #1E1E1E 94%, #0000) top/11px 11px no-repeat,
+  conic-gradient(#0000 0%, #1E1E1E);
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 11px), #000 0);
+  animation: spinner-c7wet2 1.2s infinite linear;
 
-  &::after {
-    content: ' ';
-    display: block;
-    background: none;
-    animation: circle 1.5s ease-in-out infinite;
-    border-radius: 50%;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    box-sizing: border-box;
-    border: 4px solid;
-    border-color: currentColor transparent;
-  }
-
-  @keyframes circle {
-    0% {
-      transform: rotate(0);
-    }
+  @keyframes spinner-c7wet2 {
     100% {
-      transform: rotate(360deg);
+      transform: rotate(1turn);
     }
   }`
+

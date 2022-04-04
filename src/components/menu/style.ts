@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { COLOR } from '../../contants/color';
 import { FONT_SIZES } from '../../contants/font';
 
 export const Nav = styled.nav`
@@ -29,7 +28,7 @@ export const ItemLink = styled.a`
     display: none;
     height: 2px;
     width: 100%;
-    background-color: ${COLOR.black};
+    background-color: var(--black);
     bottom: -4px;
   }
 

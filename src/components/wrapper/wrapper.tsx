@@ -1,4 +1,8 @@
-import React, { FC } from 'react';
+import React, { FC, ReactNode } from 'react';
 import { Wrap } from './style';
 
-export const Wrapper: FC = ({children}: any) => <Wrap>{children}</Wrap>;
+interface WrapperProps {
+  children: ReactNode
+}
+
+export const Wrapper: FC<WrapperProps> = ({children}) => <Wrap>{children}</Wrap>;

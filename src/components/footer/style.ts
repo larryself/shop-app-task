@@ -4,18 +4,19 @@ import { FONT_SIZES } from '../../contants/font';
 export const Wrap = styled.footer`
   display: flex;
   justify-content: space-between;
-  flex-direction: column;
-  color: rgba(0, 0, 0, 0.65);
-  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  color: var(--grey);
+  border-top: 1px solid var(--middle-grey);
   padding-top: 32px;
   padding-bottom: 67px;
+  flex-wrap: wrap;
+  align-items: center;
 `;
 
 export const A = styled.a`
   display: flex;
   cursor: pointer;
   padding: 8px;
-  background: rgba(0, 0, 0, 0.04);
+  background: var(--light-grey);
   border-radius: 8px
 `;
 
@@ -23,6 +24,10 @@ export const SocialMedia = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
+  width: auto;
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
 `;
 
 export const Phone = styled.p`
@@ -32,12 +37,5 @@ export const Phone = styled.p`
 
 export const Copyright = styled.p`
   font-size: ${FONT_SIZES.sm};
-  line-height: 18px;
-  margin-top: 8px;
-`;
-
-export const Container = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  line-height: 1.285;
 `;

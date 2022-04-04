@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import Link from 'next/link';
-import User from '../../assets/img/user.svg';
-import Favorite from '../../assets/img/favorites.svg';
-import Cart from '../../assets/img/cart.svg';
+import { Cart } from '../icon/cart/cart';
+import { Favorites } from '../icon/favorites/favorites';
+import { User } from '../icon/user/user';
 import { Container, A } from './style';
 
-const UserArea: FC = () => {
+export const UserArea: FC = () => {
   return (
     <Container>
       <Link href={'/cart'} passHref>
@@ -15,7 +15,7 @@ const UserArea: FC = () => {
       </Link>
       <Link href={'/favorites'} passHref>
         <A>
-          <Favorite/>
+          <Favorites/>
         </A>
       </Link>
       <Link href={'/user'} passHref>
@@ -26,5 +26,3 @@ const UserArea: FC = () => {
     </Container>
   );
 };
-
-export default UserArea;

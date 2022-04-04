@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useAppSelector } from '../../hooks/useAppSelector';
 import { Nav, MenuList, MenuItem, ItemLink } from './style';
 
-const Menu = () => {
+export const Menu = () => {
   const {categories} = useAppSelector(state => state.product)
   return (
     <Nav>
@@ -20,5 +20,3 @@ const Menu = () => {
     </Nav>
   );
 };
-
-export default Menu;

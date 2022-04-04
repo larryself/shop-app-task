@@ -24,7 +24,7 @@ export const Img = styled.img`
 export const Name = styled.p`
   font-weight: ${FONT_WEIGHT.md};
   font-size: ${FONT_SIZES.lg};
-  line-height: 1.334;
+  line-height: 1.444;
   margin-top: 24px;
   overflow: hidden;
   display: -webkit-box;
@@ -33,7 +33,7 @@ export const Name = styled.p`
 `;
 
 export const Price = styled.p`
-  color: rgba(0, 0, 0, 0.65);
+  color: var(--grey);
   margin-top: 8px;
   margin-bottom: 24px;
 `;

@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { COLOR } from '../../contants/color';
+import { FONT_SIZES } from '../../contants/font';
 
 export const Container = styled.div`
-  background: rgba(0, 0, 0, 0.04);
+  background: var(--light-grey);
   display: flex;
   padding: 24px 32px;
   align-items: center;
@@ -19,14 +19,17 @@ export const Inner = styled.div`
 
 export const ImgWrapper = styled.div`
   padding: 8px 12px;
-  background: ${COLOR.white};
+  background: var(--white);
   border-radius: 8px;
 `;
+export const Img = styled.img`
+  object-fit: contain;
+`
 
 export const Price = styled.p`
-  color: rgba(0, 0, 0, 0.65);
-  font-size: 16px;
-  line-height: 24px;
+  color: var(--grey);
+  font-size: ${FONT_SIZES.md};
+  line-height: 1.5;
 `;
 
 export const TotalInner = styled.div`

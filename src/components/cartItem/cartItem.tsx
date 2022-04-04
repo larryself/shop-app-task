@@ -1,15 +1,21 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
+import { useAction } from '../../hooks/useAction';
 import { Product } from '../../types';
 import CountSelector from '../countSelector/countSelector';
-import { Container, Inner, ImgWrapper, Price, TotalInner } from './style';
+import { Container, Inner, ImgWrapper, Img, Price, TotalInner } from './style';
 
-const CartItem: FC<Product> = ({image, title, piece, price}) => {
+const CartItem: FC<Product> = ({id ,image, title, piece, price}) => {
+  const {setPiece} = useAction();
   const [count, setCount] = useState(piece);
+  useEffect(()=>{
+      setPiece({id, count})
+    }
+    ,[count])
   return (
     <Container>
       <Inner>
         <ImgWrapper>
-          <img src={image} width={72} height={64} alt={title}/>
+          <Img src={image} width={72} height={64} alt={title}/>
         </ImgWrapper>
         <div>
           <p>{title}</p>
