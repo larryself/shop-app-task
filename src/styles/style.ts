@@ -17,7 +17,7 @@ export const GlobalStyles = createGlobalStyle`
 
   @font-face {
     font-family: 'GoogleSans';
-    src: local('GoogleSans'), url('/fonts/GoogleSans-Medium.ttf') format('truetype');
+    src: local('GoogleSans'), url('fonts/GoogleSans-Medium.ttf') format('truetype');
     font-weight: 500;
     font-display: block;
   }
@@ -55,14 +55,20 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   :root {
-    --default-bg-color: #ffffff;
-    --default-text-color: #000000;
+    --red: #D90429;
+    --white-grey: rgba(196, 196, 196, 0.3);
+    --grey: rgba(0, 0, 0, .65);
+    --dark-grey: rgba(0, 0, 0, 0.75);
+    --middle-grey: rgba(0,0,0, .15);
+    --light-grey: rgba(0, 0, 0, .04);
+    --white: #ffffff;
+    --black: #000000;
   }
 
   body {
     height: 100vh;
     font: 1.6rem 'GoogleSans', sans-serif;
-    line-height: 2.4rem;
+    line-height: 1.5;
     font-weight: 400;
     color: var(--default-text-color);
     background: var(--default-bg-color);

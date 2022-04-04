@@ -15,6 +15,12 @@ export const cartSlice = createSlice({
         state.push(action.payload)
       }
     },
+    setPiece: (state, {payload})=> {
+      const currentCart = state.find(cart => cart.id === payload.id)
+      if(currentCart){
+        currentCart.piece = payload.count
+      }
+    },
     removeItem: (state, action) => state.filter((cart) => cart.id !== action.payload.id),
   },
 });
