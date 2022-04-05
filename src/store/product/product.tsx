@@ -9,4 +9,4 @@ export const productsApi = createApi({
     getProducts: build.query<Product[], void>({query: () => 'products'}),
   }),
 });
-export const {useGetProductsQuery,} = productsApi;
+export const {useGetProductsQuery} = productsApi;

@@ -5,8 +5,8 @@ import RangeSlider from '../rangeSlider/rangeSlider';
 import { Section, Item, Title } from './style';
 
 export const TypeBar = () => {
-  const {price,rating, currentRating, currentPrice} = useAppSelector(state => state.product)
-  const {setCurrentPrice,setCurrentRating} = useAction();
+  const { price, rating, currentRating, currentPrice } = useAppSelector(state => state.product)
+  const { setCurrentPrice,setCurrentRating } = useAction();
   return (
     <Section>
       <Item>

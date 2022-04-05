@@ -12,21 +12,6 @@ type ProduceState = {
   currentRating: number[],
 }
 
-const getPrice = (products: Product[]) => {
-  const price = products.map(product => product.price)
-  const minPrice = Math.min(...price);
-  const maxPrice = Math.max(...price);
-  return [minPrice, maxPrice];
-}
-
-const getRating = (products: Product[]) => {
-  const rating = products.map(product => product.rating.rate)
-  const maxRating = Math.max(...rating);
-  const minRating = Math.min(...rating);
-  return [minRating, maxRating];
-}
-
-
 export const productSlice = createSlice({
   name: 'product',
   initialState: {open: null, products: [], categories: [], price: [], rating: [], currentPrice: [], currentRating: []} as ProduceState,
@@ -57,10 +42,6 @@ export const productSlice = createSlice({
         const category = payload.map(el => el.category)
         state.categories = Array.from(new Set(category))
         state.products = payload;
-        state.price = getPrice(payload);
-        state.rating = getRating(payload);
-        state.currentPrice = state.price;
-        state.currentRating = state.rating;
       }
     )
   }
