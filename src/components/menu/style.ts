@@ -10,6 +10,7 @@ export const MenuList = styled.ul`
   @media (max-width: 640px) {
     flex-direction: column;
     align-items: center;
+    gap: 5px;
   }
 `;
 
