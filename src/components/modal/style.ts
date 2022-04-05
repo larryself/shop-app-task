@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { BREAKPOINTS } from '../../contants/breakpoints';
 import { FONT_SIZES, FONT_WEIGHT } from '../../contants/font';
 
 export const ModalBox = styled.div`
@@ -23,10 +24,10 @@ export const Container = styled.div`
   flex-direction: column;
   background: var(--light-grey);
   padding: 96px 64px;
-  @media (max-width: 1024px) {
+  @media (max-width: ${BREAKPOINTS.lg}) {
     padding: 56px 24px;
   }
-  @media (max-width: 724px) {
+  @media (max-width: ${BREAKPOINTS.md}) {
     padding: 26px 10px;
   }
 `;
@@ -66,10 +67,10 @@ export const ContentInner = styled.div`
   max-width: 500px;
   padding: 32px 64px 96px;
   gap: 18px;
-  @media (max-width: 1024px) {
+  @media (max-width:  ${BREAKPOINTS.lg}) {
     padding: 28px 24px 56px;
   }
-  @media (max-width: 724px) {
+  @media (max-width: ${BREAKPOINTS.md}) {
     padding: 24px 10px ;
   }
 `;

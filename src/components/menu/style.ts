@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { BREAKPOINTS } from '../../contants/breakpoints';
 import { FONT_SIZES } from '../../contants/font';
 
 export const Nav = styled.nav`
@@ -7,7 +8,7 @@ export const Nav = styled.nav`
 export const MenuList = styled.ul`
   display: flex;
   column-gap: 32px;
-  @media (max-width: 640px) {
+  @media (max-width: ${BREAKPOINTS.sm}) {
     flex-direction: column;
     align-items: center;
     gap: 5px;

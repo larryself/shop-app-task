@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { BREAKPOINTS } from '../../contants/breakpoints';
 
 export const Main = styled.main`
   flex: 1 0 auto;
@@ -14,7 +15,7 @@ export const Inner = styled.div`
   display: flex;
   height: 100%;
   gap: 64px;
-  @media(max-width: 450px) {
+  @media(max-width: ${BREAKPOINTS.xs}) {
     flex-direction: column;
     align-items: center;
 }
