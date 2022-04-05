@@ -4,7 +4,7 @@ import { useAppSelector } from '../../hooks/useAppSelector';
 import RangeSlider from '../rangeSlider/rangeSlider';
 import { Section, Item, Title } from './style';
 
-export const TypeBar = () => {
+export const FilterBar = () => {
   const { price, rating, currentRating, currentPrice } = useAppSelector(state => state.product)
   const { setCurrentPrice,setCurrentRating } = useAction();
   return (
