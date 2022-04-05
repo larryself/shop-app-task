@@ -23,6 +23,7 @@ const HomePage: FC = () => {
     const maxPrice = Math.max(...price);
     return [minPrice, maxPrice];
   }
+
   const getRating = (products: Product[], categoryName: string | string[] | undefined) =>{
     const currentProduct =  categoryName ? products.filter(product=> product.category === categoryName) : products
     const rating = currentProduct.map(product=> product.rating.rate)
@@ -30,12 +31,14 @@ const HomePage: FC = () => {
     const maxRating = Math.max(...rating);
     return [minRating,maxRating]
   }
+
   const sortProduct = (сurrentPrice: number[], currentRating: number[], category: string | string[] | undefined) => {
     const sortedByCategory = category ? products.filter(product => product.category === category) : products;
     const sortedByPrice = sortedByCategory.filter(product => product.price >= currentPrice[0] && product.price <= currentPrice[1]);
     const sortedByRating = sortedByPrice.filter(product => product.rating.rate >= currentRating[0] && product.rating.rate <= currentRating[1])
     setProduct(sortedByRating)
   }
+
   useEffect(() => {
     if (products.length) {
       sortProduct(currentPrice, currentRating, name)
@@ -52,6 +55,7 @@ const HomePage: FC = () => {
       setCurrentPrice(price)
     }
   },[name])
+
   return (
     <Main>
       <Wrapper>

@@ -28,7 +28,7 @@ export const Title = styled.h2`
 `;
 
 export const CartContent = styled.div`
-  width: 100%;
+  flex: 1;
 `;
 
 export const CartList = styled.ul`

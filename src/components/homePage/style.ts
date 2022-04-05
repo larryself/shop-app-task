@@ -13,4 +13,5 @@ export const Container = styled.div`
 export const Inner = styled.div`
   display: flex;
   height: 100%;
+  gap: 64px;
 `;
