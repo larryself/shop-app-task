@@ -1,5 +1,6 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { Range, getTrackBackground } from 'react-range';
+import { Container, Inner, Track, Thumb, ThumbValue } from 'components/rangeSlider/style';
 
 interface RangeSliderProps {
   min: number,
@@ -8,22 +9,15 @@ interface RangeSliderProps {
   onFinalChange: (value: number[]) => void
 }
 
-export const RangeSlider: FC<RangeSliderProps> = ({min, max, value,onFinalChange}) => {
-  const [values, setValues] = React.useState<number[]>([]);
+export const RangeSlider: FC<RangeSliderProps> = ({min, max, value, onFinalChange}) => {
+  const [values, setValues] = useState<number[]>([]);
   useEffect(() => {
     setValues(value);
   }, [value])
   return (
-    <>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          flexWrap: 'wrap'
-        }}
-      >
+      <Container>
         <Range
-          step={0.1}
+          step={0.5}
           min={min}
           max={max}
           values={values}
@@ -32,21 +26,10 @@ export const RangeSlider: FC<RangeSliderProps> = ({min, max, value,onFinalChange
           }}
           onChange={(values) => setValues(values)}
           renderTrack={({props, children}) => (
-            <div
-              style={{
-                ...props.style,
-                height: '100%',
-                display: 'flex',
-                width: '100%'
-              }}
-            >
-              <div
+            <Inner>
+              <Track
                 ref={props.ref}
                 style={{
-                  height: '2px',
-                  width: '100%',
-                  borderRadius: '5px',
-                  alignSelf: 'center',
                   background: getTrackBackground({
                     values,
                     colors: ['#ccc', '#000', '#ccc'],
@@ -56,44 +39,17 @@ export const RangeSlider: FC<RangeSliderProps> = ({min, max, value,onFinalChange
                 }}
               >
                 {children}
-              </div>
-            </div>
+              </Track>
+            </Inner>
           )}
           renderThumb={({index, props, isDragged}) => (
-            <div
-              {...props}
-              style={{
-                ...props.style,
-                height: '12px',
-                width: '12px',
-                borderRadius: '50%',
-                backgroundColor: '#000',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}
-            >
-              <div
-                style={{
-                  position: 'absolute',
-                  top: '12px',
-                  color: '#000',
-                  fontWeight: 'bold',
-                  fontSize: '12px',
-                  lineHeight: '22px',
-                  fontFamily: 'inherit',
-                  padding: '4px',
-                  borderRadius: '4px',
-                  backgroundColor: 'transparent'
-                }}
-              >
+            <Thumb {...props} style={{...props.style}}>
+              <ThumbValue>
                 {values[index]}
-              </div>
-
-            </div>
+              </ThumbValue>
+            </Thumb>
           )}
         />
-      </div>
-    </>
+      </Container>
   );
 };
