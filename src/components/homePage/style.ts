@@ -15,6 +15,9 @@ export const Inner = styled.div`
   display: flex;
   height: 100%;
   gap: 64px;
+  @media(max-width: ${BREAKPOINTS.lg}) {
+    flex-direction: column;
+  }
   @media(max-width: ${BREAKPOINTS.xs}) {
     flex-direction: column;
     align-items: center;
