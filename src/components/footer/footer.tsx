@@ -10,9 +10,9 @@ export const Footer = () => {
     <Wrap>
       <SocialMedia>
         Don’t missout on once-in-a-while-deals:
-        <Link href={'https://twitter.com'} passHref={true}><A><Twitter/></A></Link>
-        <Link href={'https://instagram.com'} passHref={true}><A><Instagram/></A></Link>
-        <Link href={'https://facebook.com'} passHref={true}><A><Facebook/></A></Link>
+        <Link href={'https://twitter.com'} passHref><A><Twitter/></A></Link>
+        <Link href={'https://instagram.com'} passHref><A><Instagram/></A></Link>
+        <Link href={'https://facebook.com'} passHref><A><Facebook/></A></Link>
       </SocialMedia>
       <Phone>Support line: <Link href={'tel:+250788467808'}>+250 788 467 808</Link></Phone>
       <Copyright>Copyright 2021 © Sneaker City ltd</Copyright>
