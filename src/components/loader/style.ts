@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { COLORS } from '../../contants/colors';
 
 export const AnimationBox = styled.div`
   position: absolute;
@@ -6,7 +7,7 @@ export const AnimationBox = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--white-grey);`
+  background: ${COLORS.WHITE_GREY};`
 
 export const Animation = styled.span`
   position: absolute;

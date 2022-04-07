@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { BREAKPOINTS } from '../../contants/breakpoints';
+import { COLORS } from '../../contants/colors';
 import { FONT_SIZES } from '../../contants/font';
 
 export const Nav = styled.nav`
@@ -30,7 +31,7 @@ export const ItemLink = styled.a`
     display: none;
     height: 2px;
     width: 100%;
-    background-color: var(--black);
+    background-color: ${COLORS.BLACK};
     bottom: -4px;
   }
 

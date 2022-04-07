@@ -1,6 +1,7 @@
 import React, { FC, SVGProps } from 'react';
+import { COLORS } from '../../../contants/colors';
 
-export const Instagram: FC<SVGProps<SVGSVGElement>> = ({color = '#EF233C'}) => (
+export const Instagram: FC<SVGProps<SVGSVGElement>> = ({color = COLORS.ROSE_RED}) => (
   <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       d="M11.33 1.33H4.67a3.33 3.33 0 0 0-3.34 3.34v6.66c0 1.84 1.5 3.34 3.34 3.34h6.66c1.84 0 3.34-1.5 3.34-3.34V4.67c0-1.84-1.5-3.34-3.34-3.34Z"

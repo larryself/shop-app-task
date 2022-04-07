@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { BREAKPOINTS } from '../../contants/breakpoints';
+import { COLORS } from '../../contants/colors';
 import { FONT_SIZES, FONT_WEIGHT } from '../../contants/font';
 
 export const Section = styled.section`
@@ -11,7 +12,7 @@ export const Section = styled.section`
   }
   @media (max-width: ${BREAKPOINTS.lg}) {
     padding-bottom: 50px;
-    border-bottom: 1px solid var(--middle-grey);
+    border-bottom: 1px solid ${COLORS.MIDDLE_GREY};
     gap: 20px;
   }
   
@@ -42,7 +43,7 @@ export const Item = styled.div`
 
     &:not(:last-child) {
       padding-bottom: 70px;
-      border-bottom: 1px solid var(--middle-grey);
+      border-bottom: 1px solid ${COLORS.MIDDLE_GREY};
     }
   }
 `;

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { COLORS } from '../../contants/colors';
 import { FONT_SIZES, FONT_WEIGHT } from '../../contants/font';
 
 export const Inner = styled.div`
@@ -39,9 +40,9 @@ export const CartList = styled.ul`
 `;
 
 export const Button = styled.button`
-  background-color: var(--red);
+  background-color: ${COLORS.RED};
   padding: 10px 28px;
-  color: var(--white);
+  color: ${COLORS.WHITE};
   margin-left: 7px;
   margin-top: 64px;
 `;
@@ -51,7 +52,7 @@ export const Titles = styled.h4`
   font-weight: ${FONT_WEIGHT.md};
   font-size: ${FONT_SIZES.lg};
   line-height: 32px;
-  color: var(--dark-grey);
+  color: ${COLORS.DARK_GREY};
 `;
 
 export const List = styled.ul`
@@ -69,7 +70,7 @@ export const Row = styled.li`
 export const RowTitle = styled.p`
   font-size: ${FONT_SIZES.md};
   line-height: 1.5;
-  color: var(--grey);
+  color: ${COLORS.GREY};
 `;
 
 export const SumRow = styled.div`
@@ -84,7 +85,7 @@ export const Price = styled.p`
 `;
 
 export const Line = styled.div`
-  border: 1px solid var(--middle-grey);
+  border: 1px solid ${COLORS.MIDDLE_GREY};
   margin-top: 22px;
   margin-bottom: 24px;
 `;

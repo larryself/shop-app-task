@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { COLORS } from '../../contants/colors';
 import { FONT_SIZES, FONT_WEIGHT } from '../../contants/font';
 
 export const Inner = styled.div`
@@ -9,7 +10,7 @@ export const Inner = styled.div`
 
 export const Container = styled.div`
   flex-grow: 1;
-`
+`;
 
 export const ImgContainer = styled.div`
   display: flex;
@@ -33,7 +34,7 @@ export const Name = styled.p`
 `;
 
 export const Price = styled.p`
-  color: var(--grey);
+  color: ${COLORS.GREY};
   margin-top: 8px;
   margin-bottom: 24px;
 `;

@@ -1,6 +1,7 @@
 import React, { FC, SVGProps } from 'react';
+import { COLORS } from '../../../contants/colors';
 
-export const Minus: FC<SVGProps<SVGSVGElement>> = ({color = '#000'}) => (
+export const Minus: FC<SVGProps<SVGSVGElement>> = ({color = COLORS.BLACK}) => (
   <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       d="M3.75 9h10.5"

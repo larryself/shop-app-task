@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { BREAKPOINTS } from '../../contants/breakpoints';
+import { COLORS } from '../../contants/colors';
 import { FONT_SIZES, FONT_WEIGHT } from '../../contants/font';
 
 export const ModalBox = styled.div`
@@ -8,7 +9,7 @@ export const ModalBox = styled.div`
   top: 0;
   width: 100%;
   height: 100%;
-  background: var(--white-grey);
+  background: ${COLORS.WHITE_GREY};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,13 +17,13 @@ export const ModalBox = styled.div`
 
 export const Inner = styled.div`
   display: flex;
-  background: var(--white);
+  background: ${COLORS.WHITE};
 `;
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  background: var(--light-grey);
+  background: ${COLORS.LIGHT_GREY};
   padding: 96px 64px;
   @media (max-width: ${BREAKPOINTS.lg}) {
     padding: 56px 24px;
@@ -48,7 +49,7 @@ export const Title = styled.h3`
   width: 70%;
   font-weight: ${FONT_WEIGHT.xxl};
   font-size: ${FONT_SIZES.xxl};
-  line-height: 0.75;
+  line-height: 1;
 `;
 
 export const FavoriteBtn = styled.button`
@@ -77,8 +78,8 @@ export const ContentInner = styled.div`
 
 export const Button = styled.button`
   padding: 10px 24px;
-  background: var(--red);
-  color: var(--white);
+  background: ${COLORS.RED};
+  color: ${COLORS.WHITE};
 
   &:hover, &:focus {
     opacity: 0.4;
@@ -102,7 +103,7 @@ export const Price = styled.p`
   font-weight: ${FONT_WEIGHT.md};
   font-size: ${FONT_SIZES.lg};
   line-height: 1.555;
-  color: var(--grey);
+  color: ${COLORS.GREY};
 `
 
 export const BtnInner = styled.div`

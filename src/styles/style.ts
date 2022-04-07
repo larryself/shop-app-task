@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { COLORS } from '../contants/colors';
 
 export const GlobalStyles = createGlobalStyle`
   @font-face {
@@ -54,24 +55,13 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 10px;
   }
 
-  :root {
-    --red: #D90429;
-    --white-grey: rgba(196, 196, 196, 0.3);
-    --grey: rgba(0, 0, 0, .65);
-    --dark-grey: rgba(0, 0, 0, 0.75);
-    --middle-grey: rgba(0,0,0, .15);
-    --light-grey: rgba(0, 0, 0, .04);
-    --white: #ffffff;
-    --black: #000000;
-  }
-
   body {
     height: 100vh;
     font: 1.6rem 'GoogleSans', sans-serif;
     line-height: 1.5;
     font-weight: 400;
-    color: var(--default-text-color);
-    background: var(--default-bg-color);
+    color: ${COLORS.BLACK};
+    background: ${COLORS.WHITE};
   }
 
   #__next {

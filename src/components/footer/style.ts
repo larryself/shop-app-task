@@ -1,11 +1,12 @@
 import styled from 'styled-components';
+import { COLORS } from '../../contants/colors';
 import { FONT_SIZES } from '../../contants/font';
 
 export const Wrap = styled.footer`
   display: flex;
   justify-content: space-between;
-  color: var(--grey);
-  border-top: 1px solid var(--middle-grey);
+  color: ${COLORS.GREY};
+  border-top: 1px solid ${COLORS.MIDDLE_GREY};
   padding-top: 32px;
   padding-bottom: 67px;
   flex-wrap: wrap;
@@ -16,7 +17,7 @@ export const A = styled.a`
   display: flex;
   cursor: pointer;
   padding: 8px;
-  background: var(--light-grey);
+  background: ${COLORS.LIGHT_GREY};
   border-radius: 8px
 `;
 
