@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Product } from '../../types';
+import { Product } from 'types';
 import { productsApi } from '../product/product';
 
 type ProduceState = {
@@ -11,10 +11,19 @@ type ProduceState = {
   currentPrice: number[],
   currentRating: number[],
 }
+const initialState: ProduceState = {
+  open: null,
+  products: [],
+  categories: [],
+  price: [],
+  rating: [],
+  currentPrice: [],
+  currentRating: [],
+}
 
 export const productSlice = createSlice({
   name: 'product',
-  initialState: {open: null, products: [], categories: [], price: [], rating: [], currentPrice: [], currentRating: []} as ProduceState,
+  initialState,
   reducers: {
     openCart: (state, {payload}: PayloadAction<Product>) => {
       state.open = payload;

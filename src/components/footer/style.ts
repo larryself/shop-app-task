@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { COLORS } from '../../contants/colors';
-import { FONT_SIZES } from '../../contants/font';
+import { COLORS } from 'contants/colors';
+import { FONT_SIZES } from 'contants/font';
 
 export const Wrap = styled.footer`
   display: flex;

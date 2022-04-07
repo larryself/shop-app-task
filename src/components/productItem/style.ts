@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { COLORS } from '../../contants/colors';
-import { FONT_SIZES, FONT_WEIGHT } from '../../contants/font';
+import { COLORS } from 'contants/colors';
+import { FONT_SIZES, FONT_WEIGHT } from 'contants/font';
 
 export const Inner = styled.div`
   display: flex;

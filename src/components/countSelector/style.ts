@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { COLORS } from '../../contants/colors';
-import { FONT_SIZES } from '../../contants/font';
+import { COLORS } from 'contants/colors';
+import { FONT_SIZES } from 'contants/font';
 
 export const Input = styled.input`
   text-align: center;

@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FC } from 'react';
-import { Minus } from '../icon/minus/minus';
-import { Plus } from '../icon/plus/plus';
-import { Container, Input, Button } from './style';
+import { Minus } from 'components/icon/minus/minus';
+import { Plus } from 'components/icon/plus/plus';
+import { Container, Input, Button } from 'components/countSelector/style';
 
 interface CountSelectorProps {
   count: number,

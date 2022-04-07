@@ -1,5 +1,5 @@
 import React from 'react';
-import { AnimationBox, Animation } from './style';
+import { AnimationBox, Animation } from 'components/loader/style';
 
 export const Loader = () => (
   <AnimationBox>

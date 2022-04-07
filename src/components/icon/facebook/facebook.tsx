@@ -1,5 +1,5 @@
 import React, { FC, SVGProps } from 'react';
-import { COLORS } from '../../../contants/colors';
+import { COLORS } from 'contants/colors';
 
 export const Facebook: FC<SVGProps<SVGSVGElement>> = ({color = COLORS.ROSE_RED}) => (
   <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">

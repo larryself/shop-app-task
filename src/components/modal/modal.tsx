@@ -1,24 +1,24 @@
-import React, { useEffect, FC, useState } from 'react';
-import { useAction } from '../../hooks/useAction';
-import { CountSelector } from '../countSelector/countSelector';
-import { Product } from '../../types';
+import { useAction } from 'hooks/useAction';
+import React, { FC, useEffect, useState } from 'react';
+import { Product } from 'types';
+import { CountSelector } from 'components/countSelector/countSelector';
+import { Favorites } from 'components/icon/favorites/favorites';
 import {
-  ModalBox,
-  Inner,
-  ContentInner,
-  Content,
+  BtnInner,
   Button,
-  Img,
   Container,
-  Header,
-  TitleInner,
-  Title,
+  Content,
+  ContentInner,
   FavoriteBtn,
-  Price,
+  Header,
+  Img,
   ImgInner,
-  BtnInner
-} from './style';
-import { Favorites } from '../icon/favorites/favorites';
+  Inner,
+  ModalBox,
+  Price,
+  Title,
+  TitleInner
+} from 'components/modal/style';
 
 export const Modal: FC<{ product: Product }> = ({product}) => {
   const {closeCart, addItem} = useAction();

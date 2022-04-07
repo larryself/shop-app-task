@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { BREAKPOINTS } from '../../contants/breakpoints';
-import { COLORS } from '../../contants/colors';
-import { FONT_SIZES, FONT_WEIGHT } from '../../contants/font';
+import { BREAKPOINTS } from 'contants/breakpoints';
+import { COLORS } from 'contants/colors';
+import { FONT_SIZES, FONT_WEIGHT } from 'contants/font';
 
 export const Section = styled.section`
   display: flex;

@@ -1,10 +1,10 @@
 import React from 'react';
 import { AppProps } from 'next/app'
 import { Provider } from 'react-redux';
-import { store } from '../store/store';
-import { GlobalStyles } from '../styles/style';
+import { store } from 'store/store';
+import { GlobalStyles } from 'styles/style';
 import Head from 'next/head';
-import { PageHeader } from '../components/header/header';
+import { PageHeader } from 'components/header/header';
 
 const MyApp = ({Component, pageProps}: AppProps) => {
   return (

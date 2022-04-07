@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { BREAKPOINTS } from '../../contants/breakpoints';
+import { BREAKPOINTS } from 'contants/breakpoints';
 
 export const List = styled.ul`
   max-width: 978px;

@@ -1,8 +1,8 @@
 import React from 'react';
-import { useAction } from '../../hooks/useAction';
-import { useAppSelector } from '../../hooks/useAppSelector';
-import { RangeSlider } from '../rangeSlider/rangeSlider';
-import { Section, Item, Title } from './style';
+import { useAction } from 'hooks/useAction';
+import { useAppSelector } from 'hooks/useAppSelector';
+import { RangeSlider } from 'components/rangeSlider/rangeSlider';
+import { Section, Item, Title } from 'components/filterBar/style';
 
 export const FilterBar = () => {
   const { price, rating, currentRating, currentPrice } = useAppSelector(state => state.product)

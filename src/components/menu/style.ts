@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { BREAKPOINTS } from '../../contants/breakpoints';
-import { COLORS } from '../../contants/colors';
-import { FONT_SIZES } from '../../contants/font';
+import { BREAKPOINTS } from 'contants/breakpoints';
+import { COLORS } from 'contants/colors';
+import { FONT_SIZES } from 'contants/font';
 
 export const Nav = styled.nav`
 `;

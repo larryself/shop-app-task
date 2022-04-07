@@ -1,8 +1,8 @@
 import React, { FC, useEffect, useState } from 'react';
-import { useAction } from '../../hooks/useAction';
-import { Product } from '../../types';
-import { CountSelector } from '../countSelector/countSelector';
-import { Container, Inner, ImgWrapper, Img, Price, TotalInner } from './style';
+import { useAction } from 'hooks/useAction';
+import { Product } from 'types';
+import { CountSelector } from 'components/countSelector/countSelector';
+import { Container, Inner, ImgWrapper, Img, Price, TotalInner } from 'components/cartItem/style';
 
 export const CartItem: FC<Product> = ({id ,image, title, piece, price}) => {
   const {setPiece} = useAction();

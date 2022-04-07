@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { COLORS } from '../../contants/colors';
-import { FONT_SIZES } from '../../contants/font';
+import { COLORS } from 'contants/colors';
+import { FONT_SIZES } from 'contants/font';
 
 export const Header = styled.header`
   border-bottom: 1px solid ${COLORS.MIDDLE_GREY};

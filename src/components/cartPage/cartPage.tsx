@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
-import { useAppSelector } from '../../hooks/useAppSelector';
-import { Product } from '../../types';
-import { Wrapper } from '../wrapper/wrapper';
-import { CartItem } from '../cartItem/cartItem';
-import { Footer } from '../footer/footer';
+import { useAppSelector } from 'hooks/useAppSelector';
+import { Product } from 'types';
+import { Wrapper } from 'components/wrapper/wrapper';
+import { CartItem } from 'components/cartItem/cartItem';
+import { Footer } from 'components/footer/footer';
 import {
   Inner,
   Main,

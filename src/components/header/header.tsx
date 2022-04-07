@@ -1,10 +1,10 @@
 import { FC } from 'react';
-import { Logo } from '../icon/logo/logo';
-import { Menu } from '../menu/menu';
-import { Wrapper } from '../wrapper/wrapper';
+import { Logo } from 'components/icon/logo/logo';
+import { Menu } from 'components/menu/menu';
+import { Wrapper } from 'components/wrapper/wrapper';
 import Link from 'next/link'
-import { UserArea } from '../userArea/userArea';
-import { Container, A, Header, Title } from './style';
+import { UserArea } from 'components/userArea/userArea';
+import { Container, A, Header, Title } from 'components/header/style';
 
 export const PageHeader: FC = () => {
   return (

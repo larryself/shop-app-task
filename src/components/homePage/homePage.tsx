@@ -1,13 +1,13 @@
 import React, { FC } from 'react';
-import { useProducts } from '../../hooks/useProducts';
-import { ProductList } from '../productList/productList';
-import { Footer } from '../footer/footer';
-import { useAppSelector } from '../../hooks/useAppSelector';
-import { Modal } from '../modal/modal';
+import { useProducts } from 'hooks/useProducts';
+import { ProductList } from 'components/productList/productList';
+import { Footer } from 'components/footer/footer';
+import { useAppSelector } from 'hooks/useAppSelector';
+import { Modal } from 'components/modal/modal';
 import { useRouter } from 'next/router';
-import { FilterBar } from '../filterBar/filterBar';
-import { Main, Container, Inner } from './style';
-import { Wrapper } from '../wrapper/wrapper';
+import { FilterBar } from 'components/filterBar/filterBar';
+import { Main, Container, Inner } from 'components/homePage/style';
+import { Wrapper } from 'components/wrapper/wrapper';
 
 export const HomePage: FC = () => {
   const {open} = useAppSelector(state => state.product);

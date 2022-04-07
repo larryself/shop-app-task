@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { COLORS } from '../../contants/colors';
+import { COLORS } from 'contants/colors';
 
 export const AnimationBox = styled.div`
   position: absolute;

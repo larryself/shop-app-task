@@ -1,5 +1,5 @@
 import React, { FC, SVGProps } from 'react';
-import { COLORS } from '../../../contants/colors';
+import { COLORS } from 'contants/colors';
 
 export const Favorites: FC<SVGProps<SVGSVGElement>> = ({color = COLORS.BLACK}) => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

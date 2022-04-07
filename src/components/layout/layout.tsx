@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
-import { useGetProductsQuery } from '../../store/product/product';
-import { Loader } from '../loader/loader';
+import React, { FC, ReactNode } from 'react';
+import { useGetProductsQuery } from 'store/product/product';
+import { Loader } from 'components/loader/loader';
 
 interface LayoutProps {
-  children: React.ReactNode
+  children: ReactNode
 }
 
 export const Layout: FC<LayoutProps> = ({children}) => {

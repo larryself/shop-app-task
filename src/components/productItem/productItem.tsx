@@ -1,7 +1,7 @@
+import { useAction } from 'hooks/useAction';
 import { FC } from 'react';
-import { Product } from '../../types';
-import { useAction } from '../../hooks/useAction';
-import { Inner, Container, ImgContainer, Img, Name, Price } from './style';
+import { Product } from 'types';
+import { Container, Img, ImgContainer, Inner, Name, Price } from 'components/productItem/style';
 
 interface ProductItemProps {
   product: Product,

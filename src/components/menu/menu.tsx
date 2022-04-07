@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { useAppSelector } from '../../hooks/useAppSelector';
-import { Nav, MenuList, MenuItem, ItemLink } from './style';
+import { useAppSelector } from 'hooks/useAppSelector';
+import { Nav, MenuList, MenuItem, ItemLink } from 'components/menu/style';
 
 export const Menu = () => {
   const {categories} = useAppSelector(state => state.product)
