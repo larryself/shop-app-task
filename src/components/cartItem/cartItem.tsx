@@ -1,10 +1,10 @@
 import React, { FC, useEffect, useState } from 'react';
 import { useAction } from '../../hooks/useAction';
 import { Product } from '../../types';
-import CountSelector from '../countSelector/countSelector';
+import { CountSelector } from '../countSelector/countSelector';
 import { Container, Inner, ImgWrapper, Img, Price, TotalInner } from './style';
 
-const CartItem: FC<Product> = ({id ,image, title, piece, price}) => {
+export const CartItem: FC<Product> = ({id ,image, title, piece, price}) => {
   const {setPiece} = useAction();
   const [count, setCount] = useState(piece);
   useEffect(()=>{
@@ -31,5 +31,3 @@ const CartItem: FC<Product> = ({id ,image, title, piece, price}) => {
     </Container>
   );
 };
-
-export default CartItem;

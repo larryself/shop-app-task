@@ -6,7 +6,7 @@ interface LayoutProps {
   children: React.ReactNode
 }
 
-const Layout: FC<LayoutProps> = ({children}) => {
+export const Layout: FC<LayoutProps> = ({children}) => {
   const {isFetching} = useGetProductsQuery();
   return (
     <>
@@ -15,5 +15,3 @@ const Layout: FC<LayoutProps> = ({children}) => {
     </>
   );
 };
-
-export default Layout;

@@ -8,7 +8,7 @@ interface RangeSliderProps {
   onFinalChange: (value: number[]) => void
 }
 
-const RangeSlider: FC<RangeSliderProps> = ({min, max, value,onFinalChange}) => {
+export const RangeSlider: FC<RangeSliderProps> = ({min, max, value,onFinalChange}) => {
   const [values, setValues] = React.useState<number[]>([]);
   useEffect(() => {
     setValues(value);
@@ -97,5 +97,3 @@ const RangeSlider: FC<RangeSliderProps> = ({min, max, value,onFinalChange}) => {
     </>
   );
 };
-
-export default RangeSlider;

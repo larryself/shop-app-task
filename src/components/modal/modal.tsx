@@ -1,6 +1,6 @@
 import React, { useEffect, FC, useState } from 'react';
 import { useAction } from '../../hooks/useAction';
-import CountSelector from '../countSelector/countSelector';
+import { CountSelector } from '../countSelector/countSelector';
 import { Product } from '../../types';
 import {
   ModalBox,

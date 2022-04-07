@@ -9,7 +9,7 @@ import { FilterBar } from '../filterBar/filterBar';
 import { Main, Container, Inner } from './style';
 import { Wrapper } from '../wrapper/wrapper';
 
-const HomePage: FC = () => {
+export const HomePage: FC = () => {
   const {open} = useAppSelector(state => state.product);
   const {query: {name}} = useRouter() ;
   const {products, isLoading} = useProducts(name);
@@ -34,4 +34,3 @@ const HomePage: FC = () => {
 
   );
 };
-export default HomePage;

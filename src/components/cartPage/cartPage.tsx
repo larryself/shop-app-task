@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { useAppSelector } from '../../hooks/useAppSelector';
 import { Product } from '../../types';
 import { Wrapper } from '../wrapper/wrapper';
-import CartItem from '../cartItem/cartItem';
+import { CartItem } from '../cartItem/cartItem';
 import { Footer } from '../footer/footer';
 import {
   Inner,
@@ -22,7 +22,7 @@ import {
   Button
 } from './style';
 
-const CartPage: FC = () => {
+export const CartPage: FC = () => {
   const cart = useAppSelector(state => state.cart)
   const sum = (products: Product[]) => {
     const price = products.map(product => product.price * product.piece);
@@ -59,5 +59,3 @@ const CartPage: FC = () => {
     </Wrapper>
   );
 };
-
-export default CartPage;

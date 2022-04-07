@@ -8,7 +8,7 @@ interface CountSelectorProps {
   setCount: (value: number) => void,
 }
 
-const CountSelector: FC<CountSelectorProps> = ({count, setCount}) => {
+export const CountSelector: FC<CountSelectorProps> = ({count, setCount}) => {
   const increment = () => {
     setCount(count + 1);
   };
@@ -29,5 +29,3 @@ const CountSelector: FC<CountSelectorProps> = ({count, setCount}) => {
     </>
   );
 };
-
-export default CountSelector;
