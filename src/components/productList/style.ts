@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import { BREAKPOINTS } from 'contants/breakpoints';
 
+export const Container = styled.div`
+  position: relative;
+`;
+
 export const List = styled.ul`
   max-width: 978px;
   display: grid;

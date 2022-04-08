@@ -9,10 +9,10 @@ export const AnimationBox = styled.div`
   bottom: 0;
   background: ${COLORS.WHITE_GREY};`
 
-export const Animation = styled.span`
+export const Animation = styled.span<{top: string}>`
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: ${props => props.top};
+  left: 44%;
   width: 63px;
   height: 63px;
   border-radius: 50%;
