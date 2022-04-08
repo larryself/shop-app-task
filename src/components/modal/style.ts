@@ -19,6 +19,12 @@ export const ModalBox = styled.div`
 export const Inner = styled.div`
   display: flex;
   background: ${COLORS.WHITE};
+  max-width: 1244px;
+  width: 80%;
+  @media (max-width: ${BREAKPOINTS.md}) {
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
 
 export const Container = styled.div`
@@ -30,7 +36,7 @@ export const Container = styled.div`
     padding: 56px 24px;
   }
   @media (max-width: ${BREAKPOINTS.md}) {
-    padding: 26px 10px;
+    padding: 10px;
   }
 `;
 
@@ -38,6 +44,9 @@ export const Header = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
+  @media (max-width: ${BREAKPOINTS.md}) {
+    gap: 10px;
+  }
 `;
 
 export const TitleInner = styled.div`
@@ -47,10 +56,19 @@ export const TitleInner = styled.div`
 `;
 
 export const Title = styled.h3`
-  width: 70%;
+  width: 80%;
   font-weight: ${FONT_WEIGHT.xxl};
   font-size: ${FONT_SIZES.xxl};
   line-height: 1;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  @media (max-width: ${BREAKPOINTS.sm}) {
+    width: 100%;
+    -webkit-line-clamp: 2;
+    font-size: ${FONT_SIZES.xl};
+  }  
 `;
 
 export const FavoriteBtn = styled.button`
@@ -67,13 +85,18 @@ export const ContentInner = styled.div`
   justify-content: space-between;
   width: 100%;
   max-width: 500px;
+  min-width: 250px;
   padding: 32px 64px 96px;
   gap: 18px;
   @media (max-width:  ${BREAKPOINTS.lg}) {
     padding: 28px 24px 56px;
   }
   @media (max-width: ${BREAKPOINTS.md}) {
-    padding: 24px 10px ;
+    max-width: 100%;
+    padding: 10px;
+  }
+  @media (max-width: ${BREAKPOINTS.sm}) {
+    gap: 8px
   }
 `;
 
@@ -101,6 +124,9 @@ export const Price = styled.p`
   font-size: ${FONT_SIZES.lg};
   line-height: 1.555;
   color: ${COLORS.GREY};
+  @media (max-width: ${BREAKPOINTS.sm}) {
+    font-size: ${FONT_SIZES.sm};
+  }
 `
 
 export const BtnInner = styled.div`
@@ -114,4 +140,19 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   gap: 18px;
+  @media (max-width: ${BREAKPOINTS.sm}) {
+    gap: 5px;
+  }
+`;
+
+export const TitleDesc = styled.h3`
+  @media (max-width: ${BREAKPOINTS.sm}) {
+    font-size: ${FONT_SIZES.md};
+  }
+`;
+
+export const Description = styled.p`
+  @media (max-width: ${BREAKPOINTS.sm}) {
+    font-size: ${FONT_SIZES.sm};
+  }
 `;

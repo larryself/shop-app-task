@@ -17,7 +17,9 @@ import {
   ModalBox,
   Price,
   Title,
-  TitleInner
+  TitleInner,
+  TitleDesc,
+  Description,
 } from 'components/modal/style';
 
 export const Modal: FC<{ product: Product }> = ({product}) => {
@@ -65,13 +67,13 @@ export const Modal: FC<{ product: Product }> = ({product}) => {
             <Price>{product.price}</Price>
           </Header>
           <ImgInner>
-            <Img src={product.image} alt={product.title}/>
+            <Img src={product.image} alt={product.title} width={584} height={460}/>
           </ImgInner>
         </Container>
         <ContentInner>
           <Content>
-            <h3>Description</h3>
-            <p>{product.description}</p>
+            <TitleDesc>Description</TitleDesc>
+            <Description>{product.description}</Description>
           </Content>
           <BtnInner>
             <CountSelector count={count} setCount={setCount}/>
