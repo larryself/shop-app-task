@@ -1,4 +1,5 @@
 import React, { FC, useEffect, useState } from 'react';
+import { useAction } from 'hooks/useAction';
 import { Range, getTrackBackground } from 'react-range';
 import { Container, Inner, Track, Thumb, ThumbValue } from 'components/rangeSlider/style';
 
@@ -11,6 +12,7 @@ interface RangeSliderProps {
 
 export const RangeSlider: FC<RangeSliderProps> = ({min, max, value, onFinalChange}) => {
   const [values, setValues] = useState<number[]>([]);
+  const {setLoading} = useAction();
   useEffect(() => {
     setValues(value);
   }, [value])
@@ -22,6 +24,7 @@ export const RangeSlider: FC<RangeSliderProps> = ({min, max, value, onFinalChang
           max={max}
           values={values}
           onFinalChange={(values) => {
+            setLoading(true)
             onFinalChange(values)
           }}
           onChange={(values) => setValues(values)}

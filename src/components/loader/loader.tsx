@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { AnimationBox, Animation } from 'components/loader/style';
 
-export const Loader = () => (
+interface LoaderProps {
+  top?: string,
+}
+
+export const Loader:FC<LoaderProps> = ({top = '50%'}) => (
   <AnimationBox>
-    <Animation/>
+    <Animation top={top}/>
   </AnimationBox>
 );
 

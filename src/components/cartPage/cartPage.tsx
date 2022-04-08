@@ -1,3 +1,4 @@
+import { useCartSelector } from 'hooks/useCartSelector';
 import React, { FC } from 'react';
 import { useAppSelector } from 'hooks/useAppSelector';
 import { Product } from 'types';
@@ -23,7 +24,7 @@ import {
 } from './style';
 
 export const CartPage: FC = () => {
-  const cart = useAppSelector(state => state.cart)
+  const cart = useCartSelector();
   const sum = (products: Product[]) => {
     const price = products.map(product => product.price * product.piece);
     return price.reduce((acc, el) => acc + el, 0).toFixed(2)
