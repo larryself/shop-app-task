@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react';
 import { Product } from '../types';
 import { useAction } from './useAction';
-import { useAppSelector } from './useAppSelector';
+import { useProductSelector } from 'hooks/useProductSelector';
 
 export const useProducts = (categoryName: string | string[] | undefined) => {
   const [sortedProducts, setSortedProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const {open, products , currentPrice, currentRating} = useAppSelector(state => state.product);
-  const {setPrice, setRating, setCurrentRating, setCurrentPrice} = useAction();
-
+  const {products, currentPrice, currentRating} = useProductSelector();
+  const {setPrice, setRating, setCurrentRating, setCurrentPrice, setLoading} = useAction();
 
   const getPrice = (products: Product[]) =>{
     const price = products.map(product => product.price)
@@ -61,6 +60,7 @@ export const useProducts = (categoryName: string | string[] | undefined) => {
   useEffect(()=>{
     if(sortedProducts.length) {
       setIsLoading(true)
+      setLoading(false)
     } else {
       setIsLoading(false)
     }

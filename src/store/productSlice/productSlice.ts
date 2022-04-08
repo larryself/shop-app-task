@@ -10,6 +10,7 @@ type ProduceState = {
   rating: number[],
   currentPrice: number[],
   currentRating: number[],
+  loading: boolean,
 }
 const initialState: ProduceState = {
   open: null,
@@ -19,6 +20,7 @@ const initialState: ProduceState = {
   rating: [],
   currentPrice: [],
   currentRating: [],
+  loading: false,
 }
 
 export const productSlice = createSlice({
@@ -43,6 +45,9 @@ export const productSlice = createSlice({
     setCurrentRating: (state, {payload})=> {
       state.currentRating = payload
     },
+    setLoading: (state,{payload}) => {
+      state.loading = payload
+    }
   },
   extraReducers: (builder) => {
     builder.addMatcher(
