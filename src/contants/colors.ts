@@ -8,4 +8,5 @@ export enum COLORS {
   LIGHT_GREY = 'rgba(0, 0, 0, .04)',
   WHITE = '#ffffff',
   BLACK = '#000000',
+  BURGER_BG = '#ECEFF1',
 }
