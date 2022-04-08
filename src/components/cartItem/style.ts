@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Image from 'next/image';
 import { COLORS } from 'contants/colors';
 import { FONT_SIZES } from 'contants/font';
 
@@ -23,7 +24,7 @@ export const ImgWrapper = styled.div`
   background: ${COLORS.WHITE};
   border-radius: 8px;
 `;
-export const Img = styled.img`
+export const Img = styled(Image)`
   object-fit: contain;
 `
 

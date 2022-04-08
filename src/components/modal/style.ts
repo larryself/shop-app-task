@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Image from 'next/image';
 import { BREAKPOINTS } from 'contants/breakpoints';
 import { COLORS } from 'contants/colors';
 import { FONT_SIZES, FONT_WEIGHT } from 'contants/font';
@@ -91,11 +92,7 @@ export const ImgInner = styled.div`
   justify-content: center;
 `;
 
-export const Img = styled.img`
-  max-width: 584px;
-  max-height: 456px;
-  width: 100%;
-  height: 100%;
+export const Img = styled(Image)`
   object-fit: contain;
 `;
 

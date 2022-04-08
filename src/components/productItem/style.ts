@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Image from 'next/image';
 import { COLORS } from 'contants/colors';
 import { FONT_SIZES, FONT_WEIGHT } from 'contants/font';
 
@@ -15,10 +16,10 @@ export const Container = styled.div`
 export const ImgContainer = styled.div`
   display: flex;
   cursor: pointer;
+  justify-content: center;
 `;
 
-export const Img = styled.img`
-  width: 100%;
+export const Img = styled(Image)`
   object-fit: contain;
 `;
 
