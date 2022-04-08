@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { BREAKPOINTS } from 'contants/breakpoints';
 import { COLORS } from 'contants/colors';
 import { FONT_SIZES } from 'contants/font';
 
@@ -26,7 +27,7 @@ export const SocialMedia = styled.div`
   align-items: center;
   gap: 12px;
   width: auto;
-  @media (max-width: 1000px) {
+  @media (max-width: ${BREAKPOINTS.lg}) {
     width: 100%;
   }
 `;
