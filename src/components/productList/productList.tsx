@@ -10,7 +10,7 @@ interface CardListProps {
 }
 
 export const ProductList: FC<CardListProps> = ({products}) => {
-  const {loading} = useProductSelector();
+  const {isFiltering} = useProductSelector();
   return (
     <Container>
       <List>
@@ -18,7 +18,7 @@ export const ProductList: FC<CardListProps> = ({products}) => {
           <li key={product.id}><ProductItem product={product}/></li>
         ))}
       </List>
-      {loading && <Loader top={'50px'}/>}
+      {isFiltering && <Loader top={'50px'}/>}
     </Container>
   );
 }

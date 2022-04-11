@@ -3,24 +3,24 @@ import { Product } from 'types';
 import { productsApi } from '../product/product';
 
 type ProduceState = {
-  open: Product | null,
+  modalIsOpen: Product | null,
   products: Product[],
   categories: string[],
   price: number[],
   rating: number[],
   currentPrice: number[],
   currentRating: number[],
-  loading: boolean,
+  isFiltering: boolean,
 }
 const initialState: ProduceState = {
-  open: null,
+  modalIsOpen: null,
   products: [],
   categories: [],
   price: [],
   rating: [],
   currentPrice: [],
   currentRating: [],
-  loading: false,
+  isFiltering: false,
 }
 
 export const productSlice = createSlice({
@@ -28,10 +28,10 @@ export const productSlice = createSlice({
   initialState,
   reducers: {
     openCart: (state, {payload}: PayloadAction<Product>) => {
-      state.open = payload;
+      state.modalIsOpen = payload;
     },
     closeCart: (state) => {
-      state.open = null;
+      state.modalIsOpen = null;
     },
     setPrice : (state, {payload}) => {
       state.price = payload;
@@ -46,7 +46,7 @@ export const productSlice = createSlice({
       state.currentRating = payload
     },
     setLoading: (state,{payload}) => {
-      state.loading = payload
+      state.isFiltering = payload
     }
   },
   extraReducers: (builder) => {

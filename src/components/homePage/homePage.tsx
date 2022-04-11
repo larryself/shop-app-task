@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import { useProducts } from 'hooks/useProducts';
 import { ProductList } from 'components/productList/productList';
 import { Footer } from 'components/footer/footer';
@@ -10,7 +10,7 @@ import { Main, Container, Inner, Section, FooterInner } from 'components/homePag
 import { Wrapper } from 'components/wrapper/wrapper';
 
 export const HomePage: FC = () => {
-  const {open} = useProductSelector();
+  const {modalIsOpen} = useProductSelector();
   const {query: {name}} = useRouter() ;
   const {products, isLoading} = useProducts(name);
   return (
@@ -27,7 +27,7 @@ export const HomePage: FC = () => {
               <Footer/>
             </FooterInner>
           </Container>
-          {open && <Modal product={open}/>}
+          {modalIsOpen && <Modal product={modalIsOpen}/>}
         </Inner>
       </Wrapper>
     </Main>
