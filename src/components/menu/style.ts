@@ -84,7 +84,7 @@ export const Burger = styled.div<{isOpen: boolean}>`
       bottom: 0;
       width: ${props => props.isOpen ? `29px` : `20px`};
       height: 2px;
-      background-color: #000;
+      background-color: ${COLORS.BLACK};
       transform: ${props => props.isOpen && `rotate(-45deg) translateY(50%)`};
       transform-origin: bottom left;
     }
@@ -96,7 +96,7 @@ export const Burger = styled.div<{isOpen: boolean}>`
       bottom: 0;
       width: ${props => props.isOpen ? `29px` : `20px`};
       height: 2px;
-      background-color: #000;
+      background-color: ${COLORS.BLACK};
       transform: ${props => props.isOpen && `rotate(45deg) translateY(-50%)`};
       transform-origin: top left;
 
@@ -112,6 +112,6 @@ export const BurgetIcon = styled.span<{isOpen: boolean}>`
     bottom: 9px;
     width: 20px;
     height: 2px;
-    background-color: #000;
+    background-color: ${COLORS.BLACK};
   }
   `;
