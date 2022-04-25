@@ -32,25 +32,25 @@ export default class MyDocument extends Document {
       <Html lang={'ru'}>
         <Head>
           <link
-            rel="preload"
-            href="/fonts/GoogleSans-Bold.ttf"
-            as="font"
-            type="font/ttf"
-            crossOrigin=""
+            rel={"preload"}
+            href={"/fonts/GoogleSans-Bold.ttf"}
+            as={"font"}
+            type={"font/ttf"}
+            crossOrigin={""}
           />
           <link
-            rel="preload"
-            href="/fonts/GoogleSans-Regular.ttf"
-            as="font"
-            type="font/ttf"
-            crossOrigin=""
+            rel={"preload"}
+            href={"/fonts/GoogleSans-Regular.ttf"}
+            as={"font"}
+            type={"font/ttf"}
+            crossOrigin={""}
           />
           <link
-            rel="preload"
-            href="/fonts/GoogleSans-Medium.ttf"
-            as="font"
-            type="font/ttf"
-            crossOrigin=""
+            rel={"preload"}
+            href={"/fonts/GoogleSans-Medium.ttf"}
+            as={"font"}
+            type={"font/ttf"}
+            crossOrigin={""}
           />
         </Head>
         <body>

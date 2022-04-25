@@ -9,7 +9,7 @@ export const Menu = () => {
   return (
     <Nav onClick={() => setIsOpen(false)}>
       <Blur isOpen={isOpen}/>
-      <div onClick={(e) => e.stopPropagation()}>
+      <div onClick={(event) => event.stopPropagation()}>
         <Burger onClick={() => setIsOpen(prevState => !prevState)} isOpen={isOpen}>
           <BurgetIcon isOpen={isOpen}/>
         </Burger>

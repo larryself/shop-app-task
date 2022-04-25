@@ -38,7 +38,7 @@ export const CartPage: FC = () => {
             <Title>Your shopping cart</Title>
             <CartList>
               {cart.map((item) => (
-                <li key={item.id}>{<CartItem {...item} />}
+                <li key={item.id}><CartItem {...item} />
                 </li>
               ))}
             </CartList>

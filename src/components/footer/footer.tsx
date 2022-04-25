@@ -5,8 +5,7 @@ import { Instagram } from 'components/icon/instagram/instagram';
 import { Twitter } from 'components/icon/twitter/twitter';
 import { Wrap, SocialMedia, A, Phone, Copyright } from 'components/footer/style';
 
-export const Footer = () => {
-  return (
+export const Footer = () => (
     <Wrap>
       <SocialMedia>
         Don’t missout on once-in-a-while-deals:
@@ -18,4 +17,3 @@ export const Footer = () => {
       <Copyright>Copyright 2021 © Sneaker City ltd</Copyright>
     </Wrap>
   );
-};

@@ -7,9 +7,7 @@ interface ProductItemProps {
   product: Product,
 }
 export const ProductItem: FC<ProductItemProps> = ({product}) => {
-  const convertPrice = (value: number) => {
-    return value.toFixed(3);
-  }
+  const convertPrice = (value: number) => value.toFixed(3)
   const {openCart} = useAction();
   return (
     <Inner>

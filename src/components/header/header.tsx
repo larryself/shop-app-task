@@ -6,8 +6,7 @@ import Link from 'next/link'
 import { UserArea } from 'components/userArea/userArea';
 import { Container, A, Header, Title } from 'components/header/style';
 
-export const PageHeader: FC = () => {
-  return (
+export const PageHeader: FC = () => (
     <Header>
       <Wrapper>
         <Container>
@@ -23,4 +22,3 @@ export const PageHeader: FC = () => {
       </Wrapper>
     </Header>
   );
-};

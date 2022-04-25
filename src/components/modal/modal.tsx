@@ -1,3 +1,4 @@
+import { ChevronUp } from 'components/icon/chevronUp/chevronUp';
 import { useAction } from 'hooks/useAction';
 import React, { FC, useEffect, useState } from 'react';
 import { Product } from 'types';
@@ -18,6 +19,8 @@ import {
   Price,
   Title,
   TitleInner,
+  TitleDescInner,
+  ButtonChevron,
   TitleDesc,
   Description,
 } from 'components/modal/style';
@@ -26,6 +29,7 @@ export const Modal: FC<{ product: Product }> = ({product}) => {
   const {closeCart, addItem} = useAction();
   const {handleFavorite} = useAction();
   const [count, setCount] = useState(1);
+  const [isOpen, setIsOpen] = useState(true);
   const closeModal = () => {
     closeCart();
     const body = document.querySelector('body')
@@ -33,15 +37,18 @@ export const Modal: FC<{ product: Product }> = ({product}) => {
       body.classList.remove('no-scroll');
     }
   };
-  const outsideClickHandler = (evt: any) => {
-    if (!evt.target.classList.contains('modal')) return;
+  const outsideClickHandler = (evt: MouseEvent) => {
+    const target = evt.target as HTMLDivElement;
+    if (!target.classList.contains('modal')) return;
     closeModal();
   };
   const escHandler = (evt: KeyboardEvent) => {
     if (evt.key !== 'Escape') return;
     closeModal();
   };
-
+  const descriptionHandler = () =>{
+    setIsOpen(value => !value)
+  }
   useEffect(() => {
     const body = document.querySelector('body')
     if (body !== null) {
@@ -72,13 +79,18 @@ export const Modal: FC<{ product: Product }> = ({product}) => {
         </Container>
         <ContentInner>
           <Content>
-            <TitleDesc>Description</TitleDesc>
-            <Description>{product.description}</Description>
+            <TitleDescInner>
+              <TitleDesc>Description</TitleDesc>
+              <ButtonChevron onClick={descriptionHandler} isOpen={isOpen}>
+                <ChevronUp/>
+              </ButtonChevron>
+            </TitleDescInner>
+            <Description isOpen={isOpen}>{product.description}</Description>
           </Content>
           <BtnInner>
             <CountSelector count={count} setCount={setCount}/>
-            <Button type="button" onClick={() => {
-              addItem({...product, piece: count}), closeModal()
+            <Button type={"button"} onClick={() => {
+              addItem({...product, piece: count}); closeModal()
             }}>Add to cart</Button>
           </BtnInner>
         </ContentInner>

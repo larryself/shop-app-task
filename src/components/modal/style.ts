@@ -145,13 +145,26 @@ export const Content = styled.div`
   }
 `;
 
+export const TitleDescInner= styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
 export const TitleDesc = styled.h3`
   @media (max-width: ${BREAKPOINTS.sm}) {
     font-size: ${FONT_SIZES.md};
   }
 `;
 
-export const Description = styled.p`
+export const ButtonChevron = styled.button<{isOpen: boolean}>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: ${props => !props.isOpen && 'rotate(180deg)'};
+`;
+
+export const Description = styled.p<{isOpen: boolean}>`
+  display: ${props => props.isOpen ? 'block': 'none'};
   @media (max-width: ${BREAKPOINTS.sm}) {
     font-size: ${FONT_SIZES.sm};
   }

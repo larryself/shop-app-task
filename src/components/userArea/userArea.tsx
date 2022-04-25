@@ -5,8 +5,7 @@ import { Favorites } from 'components/icon/favorites/favorites';
 import { User } from 'components/icon/user/user';
 import { Container, A } from 'components/userArea/style';
 
-export const UserArea: FC = () => {
-  return (
+export const UserArea: FC = () => (
     <Container>
       <Link href={'/cart'} passHref>
         <A>
@@ -25,4 +24,3 @@ export const UserArea: FC = () => {
       </Link>
     </Container>
   );
-};

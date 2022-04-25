@@ -5,7 +5,7 @@ import { Container, Input, Button } from 'components/countSelector/style';
 
 interface CountSelectorProps {
   count: number,
-  setCount: (value: number) => void,
+  setCount: (count: number) => void,
 }
 
 export const CountSelector: FC<CountSelectorProps> = ({count, setCount}) => {
@@ -20,12 +20,10 @@ export const CountSelector: FC<CountSelectorProps> = ({count, setCount}) => {
     setCount(+value);
   };
   return (
-    <>
-      <Container>
-        <Button type="button" onClick={decrement} disabled={count > 0 ? false : true}><Minus/></Button>
-        <Input type="text" value={count} onChange={handleInput}/>
-        <Button type="button" onClick={increment}><Plus/></Button>
+    <Container>
+        <Button type={"button"} onClick={decrement} disabled={!(count > 0)}><Minus/></Button>
+        <Input type={"text"} value={count} onChange={handleInput}/>
+        <Button type={"button"} onClick={increment}><Plus/></Button>
       </Container>
-    </>
   );
 };

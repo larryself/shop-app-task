@@ -16,9 +16,9 @@ export const Animation = styled.span<{top: string}>`
   width: 63px;
   height: 63px;
   border-radius: 50%;
-  background: radial-gradient(farthest-side, #1E1E1E 94%, #0000) top/11px 11px no-repeat,
-  conic-gradient(#0000 0%, #1E1E1E);
-  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 11px), #000 0);
+  background: radial-gradient(farthest-side, ${COLORS.LOADERS} 94%, #0000) top/11px 11px no-repeat,
+  conic-gradient(#0000 0%, ${COLORS.LOADERS});
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 11px), ${COLORS.BLACK} 0);
   animation: spinner-c7wet2 1.2s infinite linear;
 
   @keyframes spinner-c7wet2 {

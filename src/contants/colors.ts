@@ -9,4 +9,5 @@ export enum COLORS {
   WHITE = '#ffffff',
   BLACK = '#000000',
   BURGER_BG = '#ECEFF1',
+  LOADERS = '#1E1E1E',
 }

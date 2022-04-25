@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC } from 'react';
 import { useProducts } from 'hooks/useProducts';
 import { ProductList } from 'components/productList/productList';
 import { Footer } from 'components/footer/footer';
@@ -20,7 +20,7 @@ export const HomePage: FC = () => {
           <FilterBar/>
           <Container>
             <Section>
-              <h2>{name ? name : 'All products'}</h2>
+              <h2>{name || 'All products'}</h2>
               {isLoading && <ProductList products={products}/>}
             </Section>
             <FooterInner>
@@ -31,6 +31,5 @@ export const HomePage: FC = () => {
         </Inner>
       </Wrapper>
     </Main>
-
   );
 };

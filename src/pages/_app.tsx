@@ -6,8 +6,7 @@ import { GlobalStyles } from 'styles/style';
 import Head from 'next/head';
 import { PageHeader } from 'components/header/header';
 
-const MyApp = ({Component, pageProps}: AppProps) => {
-  return (
+const MyApp = ({Component, pageProps}: AppProps) => (
     <Provider store={store}>
       <GlobalStyles/>
       <Head>
@@ -18,7 +17,6 @@ const MyApp = ({Component, pageProps}: AppProps) => {
       <PageHeader/>
       <Component {...pageProps} />
     </Provider>
-  );
-}
+  )
 
 export default MyApp;
