@@ -1,8 +1,8 @@
 import { useDispatch } from 'react-redux';
 import { bindActionCreators } from '@reduxjs/toolkit';
-import { cartActions } from '../store/cartSlice/cartSlice';
-import { productActions } from '../store/productSlice/productSlice';
-import { favoritesActions } from '../store/favoritesSlice/favoritesSlice';
+import { cartActions } from 'store/cartSlice/cartSlice';
+import { productActions } from 'store/productSlice/productSlice';
+import { favoritesActions } from 'store/favoritesSlice/favoritesSlice';
 
 const allActions = {
   ...cartActions, ...productActions, ...favoritesActions
