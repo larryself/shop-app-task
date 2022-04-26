@@ -1,6 +1,5 @@
-import { useCartSelector } from 'hooks/useCartSelector';
 import React, { FC } from 'react';
-import { useAppSelector } from 'hooks/useAppSelector';
+import { useCartSelector } from 'hooks/useCartSelector';
 import { Product } from 'types';
 import { Wrapper } from 'components/wrapper/wrapper';
 import { CartItem } from 'components/cartItem/cartItem';
