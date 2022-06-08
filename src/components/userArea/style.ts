@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
@@ -8,6 +8,7 @@ export const Container = styled.div`
 export const A = styled.a`
   display: flex;
   cursor: pointer;
+
   &:hover {
     opacity: 0.2;
   }

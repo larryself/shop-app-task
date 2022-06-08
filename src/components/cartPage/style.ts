@@ -7,7 +7,8 @@ export const Inner = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-`
+`;
+
 export const Main = styled.div`
   flex: 1 0 auto;
   padding: 32px 0;
@@ -26,7 +27,7 @@ export const Total = styled.div`
   max-width: 368px;
   width: 100%;
   @media (max-width: ${BREAKPOINTS.md}) {
-   max-width: 100%;
+    max-width: 100%;
   }
 `;
 

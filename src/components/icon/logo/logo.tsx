@@ -1,7 +1,7 @@
 import React, { FC, SVGProps } from 'react';
 import { COLORS } from 'contants/colors';
 
-export const Logo: FC<SVGProps<SVGSVGElement>> = ({color = COLORS.RED}) => (
+export const Logo: FC<SVGProps<SVGSVGElement>> = ({ color = COLORS.RED }) => (
   <svg width={'32'} height={'31'} fill={'none'} xmlns={'http://www.w3.org/2000/svg'}>
     <path
       fillRule={'evenodd'}

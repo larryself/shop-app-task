@@ -1,11 +1,12 @@
+import { observer } from 'mobx-react-lite';
 import { useState } from 'react';
 import Link from 'next/link';
-import { useProductSelector } from 'hooks/useProductSelector';
 import { Nav, MenuList, MenuItem, ItemLink, Blur, Burger, BurgetIcon } from 'components/menu/style';
+import { useStore } from 'store/store';
 
-export const Menu = () => {
+export const Menu = observer(() => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const {categories} = useProductSelector();
+  const { productStore: { categories } } = useStore();
   return (
     <Nav onClick={() => setIsOpen(false)}>
       <Blur isOpen={isOpen}/>
@@ -27,4 +28,4 @@ export const Menu = () => {
       </div>
     </Nav>
   );
-};
+});

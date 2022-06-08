@@ -1,16 +1,16 @@
 import React, { FC, useEffect, useState } from 'react';
-import { useAction } from 'hooks/useAction';
+import { useStore } from 'store/store';
 import { Product } from 'types';
 import { CountSelector } from 'components/countSelector/countSelector';
 import { Container, Inner, ImgWrapper, Img, Title, Price, TotalInner } from 'components/cartItem/style';
 
-export const CartItem: FC<Product> = ({id ,image, title, piece, price}) => {
-  const {setPiece} = useAction();
+export const CartItem: FC<Product> = ({ id, image, title, piece, price }) => {
+  const { cartStore } = useStore();
   const [count, setCount] = useState(piece);
-  useEffect(()=>{
-      setPiece({id, count})
+  useEffect(() => {
+      cartStore.setPiece({ id, count });
     }
-    ,[count])
+    , [count]);
   return (
     <Container>
       <Inner>
