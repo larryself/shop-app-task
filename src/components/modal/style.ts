@@ -85,7 +85,6 @@ export const ContentInner = styled.div`
   justify-content: space-between;
   width: 100%;
   max-width: 500px;
-  min-width: 250px;
   padding: 32px 64px 96px;
   gap: 18px;
   @media (max-width:  ${BREAKPOINTS.lg}) {

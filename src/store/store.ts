@@ -1,9 +1,6 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import { productsApi } from 'store/product/product';
-import { cartReducer } from 'store/cartSlice/cartSlice';
-import { productReducer } from 'store/productSlice/productSlice';
+import { productsApi, cartReducer, favoritesReducer, productReducer } from 'store';
 import { setupListeners } from '@reduxjs/toolkit/query';
-import { favoritesReducer } from 'store/favoritesSlice/favoritesSlice';
 
 const rootReducer = combineReducers({
   cart: cartReducer,

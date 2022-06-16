@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Product } from '../types';
-import { useAction } from './useAction';
+import { Product } from 'types';
+import { useAction } from 'hooks/useAction';
 import { useProductSelector } from 'hooks/useProductSelector';
 
 export const useProducts = (categoryName: string | string[] | undefined) => {

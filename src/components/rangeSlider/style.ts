@@ -1,4 +1,5 @@
 import { COLORS } from 'contants/colors';
+import { FONT_SIZES } from 'contants/font';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -33,8 +34,8 @@ export const ThumbValue = styled.div`
   top: 12px;
   color: ${COLORS.BLACK};
   font-weight: bold;
-  font-size: 12px;
-  line-height: 22px;
+  font-size: ${FONT_SIZES.xs};
+  line-height: 1.833;
   font-family: inherit;
   padding: 4px;
   border-radius: 4px;

@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from 'react';
-import { useGetProductsQuery } from 'store/product/product';
+import { useGetProductsQuery } from 'store';
 import { Loader } from 'components/loader/loader';
 
 interface LayoutProps {

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { BREAKPOINTS } from 'contants/breakpoints';
 import { COLORS } from 'contants/colors';
 import { FONT_SIZES, FONT_WEIGHT } from 'contants/font';
 
@@ -16,10 +17,17 @@ export const ContentInner = styled.div`
   display: flex;
   width: 100%;
   gap: 64px;
+  @media (max-width: ${BREAKPOINTS.md}) {
+    flex-direction: column;
+  }
 `;
 
 export const Total = styled.div`
-  width: 368px;
+  max-width: 368px;
+  width: 100%;
+  @media (max-width: ${BREAKPOINTS.md}) {
+   max-width: 100%;
+  }
 `;
 
 export const Title = styled.h2`
