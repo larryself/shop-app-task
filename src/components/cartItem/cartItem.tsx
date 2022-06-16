@@ -5,10 +5,13 @@ import { CountSelector } from 'components/countSelector/countSelector';
 import { Container, Inner, ImgWrapper, Img, Title, Price, TotalInner } from 'components/cartItem/style';
 
 export const CartItem: FC<Product> = ({id ,image, title, piece, price}) => {
-  const {setPiece} = useAction();
+  const {setPiece, removeItem} = useAction();
   const [count, setCount] = useState(piece);
   useEffect(()=>{
-      setPiece({id, count})
+      setPiece({id, count});
+      if(count === 0){
+          removeItem({id});
+      }
     }
     ,[count])
   return (
