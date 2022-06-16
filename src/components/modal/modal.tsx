@@ -1,9 +1,7 @@
-import { ChevronUp } from 'components/icon/chevronUp/chevronUp';
-import { useAction } from 'hooks/useAction';
+import { ChevronUp, Favorites, CountSelector } from 'components';
 import React, { FC, useEffect, useState } from 'react';
+import { useStore } from 'store/store';
 import { Product } from 'types';
-import { CountSelector } from 'components/countSelector/countSelector';
-import { Favorites } from 'components/icon/favorites/favorites';
 import {
   BtnInner,
   Button,
@@ -25,14 +23,13 @@ import {
   Description,
 } from 'components/modal/style';
 
-export const Modal: FC<{ product: Product }> = ({product}) => {
-  const {closeCart, addItem} = useAction();
-  const {handleFavorite} = useAction();
+export const Modal: FC<{ product: Product }> = ({ product }) => {
+  const { cartStore, productStore, favoriteStore } = useStore();
   const [count, setCount] = useState(1);
   const [isOpen, setIsOpen] = useState(true);
   const closeModal = () => {
-    closeCart();
-    const body = document.querySelector('body')
+    productStore.closeCart();
+    const body = document.querySelector('body');
     if (body !== null) {
       body.classList.remove('no-scroll');
     }
@@ -46,11 +43,11 @@ export const Modal: FC<{ product: Product }> = ({product}) => {
     if (evt.key !== 'Escape') return;
     closeModal();
   };
-  const descriptionHandler = () =>{
-    setIsOpen(value => !value)
-  }
+  const descriptionHandler = () => {
+    setIsOpen(value => !value);
+  };
   useEffect(() => {
-    const body = document.querySelector('body')
+    const body = document.querySelector('body');
     if (body !== null) {
       body.classList.add('no-scroll');
       document.addEventListener('click', outsideClickHandler);
@@ -69,7 +66,7 @@ export const Modal: FC<{ product: Product }> = ({product}) => {
           <Header>
             <TitleInner>
               <Title>{product.title}</Title>
-              <FavoriteBtn onClick={() => handleFavorite(product)}><Favorites/></FavoriteBtn>
+              <FavoriteBtn onClick={() => favoriteStore.handleFavorite(product)}><Favorites/></FavoriteBtn>
             </TitleInner>
             <Price>{product.price}</Price>
           </Header>
@@ -89,9 +86,11 @@ export const Modal: FC<{ product: Product }> = ({product}) => {
           </Content>
           <BtnInner>
             <CountSelector count={count} setCount={setCount}/>
-            <Button type={"button"} onClick={() => {
-              addItem({...product, piece: count}); closeModal()
-            }}>Add to cart</Button>
+            <Button type={'button'} onClick={() => {
+              cartStore.addToCart({ ...product, piece: count });
+              closeModal();
+            }}
+            disabled={!(count > 0)}>Add to cart</Button>
           </BtnInner>
         </ContentInner>
       </Inner>

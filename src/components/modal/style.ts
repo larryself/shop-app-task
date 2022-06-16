@@ -68,7 +68,7 @@ export const Title = styled.h3`
     width: 100%;
     -webkit-line-clamp: 2;
     font-size: ${FONT_SIZES.xl};
-  }  
+  }
 `;
 
 export const FavoriteBtn = styled.button`
@@ -87,7 +87,7 @@ export const ContentInner = styled.div`
   max-width: 500px;
   padding: 32px 64px 96px;
   gap: 18px;
-  @media (max-width:  ${BREAKPOINTS.lg}) {
+  @media (max-width: ${BREAKPOINTS.lg}) {
     padding: 28px 24px 56px;
   }
   @media (max-width: ${BREAKPOINTS.md}) {
@@ -105,6 +105,9 @@ export const Button = styled.button`
   color: ${COLORS.WHITE};
 
   &:hover, &:focus {
+    opacity: 0.4;
+  }
+  &:disabled {
     opacity: 0.4;
   }
 `;
@@ -126,7 +129,7 @@ export const Price = styled.p`
   @media (max-width: ${BREAKPOINTS.sm}) {
     font-size: ${FONT_SIZES.sm};
   }
-`
+`;
 
 export const BtnInner = styled.div`
   display: flex;
@@ -144,7 +147,7 @@ export const Content = styled.div`
   }
 `;
 
-export const TitleDescInner= styled.div`
+export const TitleDescInner = styled.div`
   display: flex;
   justify-content: space-between;
 `;
@@ -155,15 +158,15 @@ export const TitleDesc = styled.h3`
   }
 `;
 
-export const ButtonChevron = styled.button<{isOpen: boolean}>`
+export const ButtonChevron = styled.button<{ isOpen: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
   transform: ${props => !props.isOpen && 'rotate(180deg)'};
 `;
 
-export const Description = styled.p<{isOpen: boolean}>`
-  display: ${props => props.isOpen ? 'block': 'none'};
+export const Description = styled.p<{ isOpen: boolean }>`
+  display: ${props => props.isOpen ? 'block' : 'none'};
   @media (max-width: ${BREAKPOINTS.sm}) {
     font-size: ${FONT_SIZES.sm};
   }

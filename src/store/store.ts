@@ -1,18 +1,21 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import { productsApi, cartReducer, favoritesReducer, productReducer } from 'store';
-import { setupListeners } from '@reduxjs/toolkit/query';
+import { createContext, useContext } from 'react';
+import { CartStore } from 'store/cartStore';
+import { FavoriteStore } from 'store/favoriteStore';
+import { ProductStore } from 'store/productStore';
 
-const rootReducer = combineReducers({
-  cart: cartReducer,
-  product: productReducer,
-  favorites: favoritesReducer,
-  [productsApi.reducerPath]: productsApi.reducer,
-});
+export class RootStore {
+  cartStore: CartStore;
+  productStore: ProductStore;
+  favoriteStore: FavoriteStore;
 
-export const store = configureStore({
-  reducer: rootReducer,
-  middleware: getDefaultMiddleware => getDefaultMiddleware().concat(productsApi.middleware),
-});
+  constructor() {
+    this.cartStore = new CartStore(this);
+    this.productStore = new ProductStore(this);
+    this.favoriteStore = new FavoriteStore(this);
+  }
+}
 
-setupListeners(store.dispatch);
-export type TypeRootState = ReturnType<typeof store.getState>
+export const rootStore = new RootStore();
+
+export const RootStoreContext = createContext(rootStore);
+export const useStore = () => useContext(RootStoreContext);

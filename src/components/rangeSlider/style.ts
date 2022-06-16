@@ -7,11 +7,13 @@ export const Container = styled.div`
   justify-content: center;
   flex-wrap: wrap
 `;
+
 export const Inner = styled.div`
   height: 100%;
   display: flex;
   width: 100%;
 `;
+
 export const Track = styled.div`
   height: 2px;
   width: 100%;

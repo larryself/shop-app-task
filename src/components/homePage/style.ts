@@ -4,7 +4,7 @@ import { BREAKPOINTS } from 'contants/breakpoints';
 export const Main = styled.main`
   flex: 1 0 auto;
   padding-top: 32px;
-`
+`;
 export const Container = styled.div`
   max-width: 978px;
   width: 100%;
@@ -16,13 +16,13 @@ export const Inner = styled.div`
   display: flex;
   height: 100%;
   gap: 64px;
-  @media(max-width: ${BREAKPOINTS.lg}) {
+  @media (max-width: ${BREAKPOINTS.lg}) {
     flex-direction: column;
   }
-  @media(max-width: ${BREAKPOINTS.xs}) {
+  @media (max-width: ${BREAKPOINTS.xs}) {
     flex-direction: column;
     align-items: center;
-}
+  }
 `;
 
 export const Section = styled.section`

@@ -8,15 +8,15 @@ export const Section = styled.section`
   width: 100%;
   @media (max-width: ${BREAKPOINTS.sm}) {
     flex-direction: column;
- 
+
   }
   @media (max-width: ${BREAKPOINTS.lg}) {
     padding-bottom: 50px;
     border-bottom: 1px solid ${COLORS.MIDDLE_GREY};
     gap: 20px;
   }
-  
-  @media (min-width: ${BREAKPOINTS.lg}){
+
+  @media (min-width: ${BREAKPOINTS.lg}) {
     flex-direction: column;
     max-width: 302px;
     margin-left: -19px;
@@ -32,7 +32,7 @@ export const Title = styled.h4`
 
 export const Item = styled.div`
   padding: 25px;
-  
+
   @media (max-width: ${BREAKPOINTS.lg}) {
     flex: 1;
   }

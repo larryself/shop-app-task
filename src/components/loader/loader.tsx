@@ -5,7 +5,7 @@ interface LoaderProps {
   top?: string,
 }
 
-export const Loader:FC<LoaderProps> = ({top = '50%'}) => (
+export const Loader: FC<LoaderProps> = ({ top = '50%' }) => (
   <AnimationBox>
     <Animation top={top}/>
   </AnimationBox>

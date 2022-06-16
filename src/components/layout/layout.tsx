@@ -1,17 +1,18 @@
+import { observer } from 'mobx-react-lite';
 import React, { FC, ReactNode } from 'react';
-import { useGetProductsQuery } from 'store';
-import { Loader } from 'components/loader/loader';
+import { Loader } from 'components';
+import { useStore } from 'store/store';
 
 interface LayoutProps {
   children: ReactNode
 }
 
-export const Layout: FC<LayoutProps> = ({children}) => {
-  const {isFetching} = useGetProductsQuery();
+export const Layout: FC<LayoutProps> = observer(({ children }) => {
+  const { productStore } = useStore();
   return (
     <>
       {children}
-      {isFetching && <Loader/>}
+      {productStore.getProducts.length < 1 && <Loader/>}
     </>
   );
-};
+});

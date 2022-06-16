@@ -7,9 +7,9 @@ export const AnimationBox = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background: ${COLORS.WHITE_GREY};`
+  background: ${COLORS.WHITE_GREY};`;
 
-export const Animation = styled.span<{top: string}>`
+export const Animation = styled.span<{ top: string }>`
   position: absolute;
   top: ${props => props.top};
   left: 44%;
@@ -25,5 +25,5 @@ export const Animation = styled.span<{top: string}>`
     100% {
       transform: rotate(1turn);
     }
-  }`
+  }`;
 

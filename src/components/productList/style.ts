@@ -12,7 +12,7 @@ export const List = styled.ul`
   column-gap: 24px;
   row-gap: 64px;
   margin-top: 24px;
-  @media (max-width:  ${BREAKPOINTS.lg}) {
+  @media (max-width: ${BREAKPOINTS.lg}) {
     grid-template-columns: repeat(2, 1fr);
   };
   @media (max-width: ${BREAKPOINTS.sm}) {

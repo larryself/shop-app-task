@@ -1,12 +1,10 @@
-import type { NextPage } from 'next'
+import type { NextPage } from 'next';
 import React from 'react';
-import { HomePage } from 'components/homePage/homePage';
-import { Layout } from 'components/layout/layout';
+import { HomePage, Layout } from 'components';
 
 const Index: NextPage = () => (
     <Layout>
       <HomePage/>
     </Layout>
-  )
-
-export default Index
+  );
+export default Index;

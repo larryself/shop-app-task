@@ -6,7 +6,7 @@ import { FONT_SIZES, FONT_WEIGHT } from 'contants/font';
 export const Nav = styled.nav`
 `;
 
-export const MenuList = styled.ul<{isOpen?: boolean}>`
+export const MenuList = styled.ul<{ isOpen?: boolean }>`
   display: flex;
   column-gap: 32px;
   @media (max-width: ${BREAKPOINTS.md}) {
@@ -52,14 +52,15 @@ export const ItemLink = styled.a`
   &:hover::after {
     display: block;
   }
-  @media (max-width: ${BREAKPOINTS.md}){
+
+  @media (max-width: ${BREAKPOINTS.md}) {
     font-weight: ${FONT_WEIGHT.xl};
     justify-content: center;
   }
 `;
 
-export const Blur = styled.div<{isOpen:boolean}>`
-  ${props => props.isOpen && 
+export const Blur = styled.div<{ isOpen: boolean }>`
+  ${props => props.isOpen &&
           `@media (max-width: ${BREAKPOINTS.md}) {
     backdrop-filter: blur(2px);
     position: fixed;
@@ -70,7 +71,7 @@ export const Blur = styled.div<{isOpen:boolean}>`
     z-index: 1;
   `}
 `;
-export const Burger = styled.div<{isOpen: boolean}>`
+export const Burger = styled.div<{ isOpen: boolean }>`
   @media (max-width: ${BREAKPOINTS.md}) {
     z-index: 3;
     cursor: pointer;
@@ -103,7 +104,7 @@ export const Burger = styled.div<{isOpen: boolean}>`
     }
   }
 `;
-export const BurgetIcon = styled.span<{isOpen: boolean}>`
+export const BurgetIcon = styled.span<{ isOpen: boolean }>`
   @media (max-width: ${BREAKPOINTS.md}) {
     ${props => props.isOpen && `
     transform: scale(0.1);
@@ -114,4 +115,4 @@ export const BurgetIcon = styled.span<{isOpen: boolean}>`
     height: 2px;
     background-color: ${COLORS.BLACK};
   }
-  `;
+`;
