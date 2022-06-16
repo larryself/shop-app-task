@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react-lite';
 import React, { FC, ReactNode } from 'react';
-import { Loader } from 'components/loader/loader';
+import { Loader } from 'components';
 import { useStore } from 'store/store';
 
 interface LayoutProps {

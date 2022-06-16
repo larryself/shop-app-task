@@ -1,8 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Facebook } from 'components/icon/facebook/facebook';
-import { Instagram } from 'components/icon/instagram/instagram';
-import { Twitter } from 'components/icon/twitter/twitter';
+import { Facebook, Instagram, Twitter } from 'components';
 import { Wrap, SocialMedia, A, Phone, Copyright } from 'components/footer/style';
 
 export const Footer = () => (

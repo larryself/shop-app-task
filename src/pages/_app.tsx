@@ -3,7 +3,7 @@ import { AppProps } from 'next/app';
 import { rootStore, RootStoreContext } from 'store/store';
 import { GlobalStyles } from 'styles/style';
 import Head from 'next/head';
-import { PageHeader } from 'components/header/header';
+import { PageHeader } from 'components';
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
     <RootStoreContext.Provider value={rootStore}>

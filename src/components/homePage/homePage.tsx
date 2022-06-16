@@ -1,13 +1,9 @@
 import { observer } from 'mobx-react-lite';
 import React, { FC } from 'react';
 import { useProducts } from 'hooks/useProducts';
-import { ProductList } from 'components/productList/productList';
-import { Footer } from 'components/footer/footer';
-import { Modal } from 'components/modal/modal';
+import { ProductList, Footer, Modal, FilterBar, Wrapper} from 'components';
 import { useRouter } from 'next/router';
-import { FilterBar } from 'components/filterBar/filterBar';
 import { Main, Container, Inner, Section, FooterInner } from 'components/homePage/style';
-import { Wrapper } from 'components/wrapper/wrapper';
 import { useStore } from 'store/store';
 
 export const HomePage: FC = observer(() => {

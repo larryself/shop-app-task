@@ -1,9 +1,7 @@
-import { ChevronUp } from 'components/icon/chevronUp/chevronUp';
+import { ChevronUp, Favorites, CountSelector } from 'components';
 import React, { FC, useEffect, useState } from 'react';
 import { useStore } from 'store/store';
 import { Product } from 'types';
-import { CountSelector } from 'components/countSelector/countSelector';
-import { Favorites } from 'components/icon/favorites/favorites';
 import {
   BtnInner,
   Button,
@@ -91,7 +89,8 @@ export const Modal: FC<{ product: Product }> = ({ product }) => {
             <Button type={'button'} onClick={() => {
               cartStore.addToCart({ ...product, piece: count });
               closeModal();
-            }}>Add to cart</Button>
+            }}
+            disabled={!(count > 0)}>Add to cart</Button>
           </BtnInner>
         </ContentInner>
       </Inner>

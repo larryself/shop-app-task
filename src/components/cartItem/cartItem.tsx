@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from 'react';
 import { useStore } from 'store/store';
 import { Product } from 'types';
-import { CountSelector } from 'components/countSelector/countSelector';
+import { CountSelector } from 'components';
 import { Container, Inner, ImgWrapper, Img, Title, Price, TotalInner } from 'components/cartItem/style';
 
 export const CartItem: FC<Product> = ({ id, image, title, piece, price }) => {
@@ -9,6 +9,9 @@ export const CartItem: FC<Product> = ({ id, image, title, piece, price }) => {
   const [count, setCount] = useState(piece);
   useEffect(() => {
       cartStore.setPiece({ id, count });
+      if(count === 0){
+          cartStore.removeToCart(id);
+      }
     }
     , [count]);
   return (

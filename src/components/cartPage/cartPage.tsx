@@ -2,9 +2,7 @@ import { observer } from 'mobx-react-lite';
 import React, { FC } from 'react';
 import { useStore } from 'store/store';
 import { Product } from 'types';
-import { Wrapper } from 'components/wrapper/wrapper';
-import { CartItem } from 'components/cartItem/cartItem';
-import { Footer } from 'components/footer/footer';
+import { Wrapper, CartItem, Footer } from 'components';
 import {
   Inner,
   Main,

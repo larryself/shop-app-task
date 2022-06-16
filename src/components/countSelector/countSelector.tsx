@@ -1,6 +1,5 @@
 import React, { ChangeEvent, FC } from 'react';
-import { Minus } from 'components/icon/minus/minus';
-import { Plus } from 'components/icon/plus/plus';
+import { Minus, Plus } from 'components';
 import { Container, Input, Button } from 'components/countSelector/style';
 
 interface CountSelectorProps {
@@ -22,7 +21,7 @@ export const CountSelector: FC<CountSelectorProps> = ({ count, setCount }) => {
   };
   return (
     <Container>
-      <Button type={'button'} onClick={decrement} disabled={!(count > 1)}><Minus/></Button>
+      <Button type={'button'} onClick={decrement} disabled={!(count > 0)}><Minus/></Button>
       <Input type={'text'} value={count} onChange={handleInput}/>
       <Button type={'button'} onClick={increment}><Plus/></Button>
     </Container>

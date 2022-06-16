@@ -1,5 +1,5 @@
 import React from 'react';
-import { RangeSlider } from 'components/rangeSlider/rangeSlider';
+import { RangeSlider } from 'components';
 import { Section, Item, Title } from 'components/filterBar/style';
 import { useStore } from 'store/store';
 

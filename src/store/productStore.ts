@@ -26,13 +26,9 @@ export class ProductStore {
 
   async fetchAllProducts() {
     if (this.products.length < 1) {
-      try {
-        const res = await axios.get(`${baseUrl}products`);
-        this.products = res.data;
-        this.categories = Array.from(new Set(res.data.map((item: Product) => item.category)));
-      } catch {
-        console.log('error');
-      }
+      const res = await axios.get(`${baseUrl}products`);
+      this.products = res.data;
+      this.categories = Array.from(new Set(res.data.map((item: Product) => item.category)));
     }
     return toJS(this.products);
   }
@@ -70,11 +66,9 @@ export class ProductStore {
   }
 
   setRating(payload: number[]) {
-
     if (payload.length) {
       this.rating = payload;
     }
-
   }
 
   setCurrentPrice(payload: number[]) {
@@ -89,4 +83,3 @@ export class ProductStore {
     this.isFiltering = payload;
   }
 }
-

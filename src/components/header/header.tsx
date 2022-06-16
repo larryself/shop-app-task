@@ -1,9 +1,6 @@
 import { FC } from 'react';
-import { Logo } from 'components/icon/logo/logo';
-import { Menu } from 'components/menu/menu';
-import { Wrapper } from 'components/wrapper/wrapper';
+import { Logo, Menu, Wrapper, UserArea } from 'components';
 import Link from 'next/link';
-import { UserArea } from 'components/userArea/userArea';
 import { Container, A, Header, Title } from 'components/header/style';
 
 export const PageHeader: FC = () => (

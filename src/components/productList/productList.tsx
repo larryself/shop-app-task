@@ -1,7 +1,6 @@
 import { observer } from 'mobx-react-lite';
 import React, { FC } from 'react';
-import { Loader } from 'components/loader/loader';
-import { ProductItem } from 'components/productItem/productItem';
+import { Loader, ProductItem } from 'components';
 import { useStore } from 'store/store';
 import { Product } from 'types';
 import { Container, List } from 'components/productList/style';

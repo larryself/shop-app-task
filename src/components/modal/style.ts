@@ -107,6 +107,9 @@ export const Button = styled.button`
   &:hover, &:focus {
     opacity: 0.4;
   }
+  &:disabled {
+    opacity: 0.4;
+  }
 `;
 
 export const ImgInner = styled.div`
