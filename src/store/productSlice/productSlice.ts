@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Product } from 'types';
-import { productsApi } from '../product/product';
+import { productsApi } from 'store';
 
 type ProduceState = {
   modalIsOpen: Product | null,
